@@ -27,19 +27,31 @@ export function PrinciplesSection() {
                     <div className="relative h-[600px] w-full">
                         {/* Top Wide Image */}
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="absolute top-0 w-[85%] left-0 h-[80%] rounded-2xl overflow-hidden shadow-2xl z-10"
+                            className="absolute top-0 w-full left-0 h-full p-2 rounded-2xl overflow-hidden z-10"
                         >
-                            <Image
-                                src="/images/principles/1.jpeg"
-                                alt="Modern Interior Desk"
-                                fill
-                                sizes="(max-width: 1024px) 100vw, 50vw"
-                                className="object-cover hover:scale-105 transition-transform duration-700"
-                            />
+                            <motion.div
+                                animate={{
+                                    y: [0, -15, 0],
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="relative w-full h-full"
+                            >
+                                <Image
+                                    src="/images/principles/3D-hous.png"
+                                    alt="Modern Interior Desk"
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-contain hover:scale-105 transition-transform duration-700"
+                                />
+                            </motion.div>
                         </motion.div>
 
                         {/* Bottom Right Overlapping Image */}
@@ -48,7 +60,7 @@ export function PrinciplesSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="absolute bottom-10 right-4 w-72 h-64 md:w-80 md:h-72 rounded-2xl overflow-hidden shadow-2xl z-20 border-4 border-white"
+                            className="absolute bottom-10 right-4 w-60 h-52 md:w-80 md:h-72 rounded-2xl overflow-hidden shadow-2xl z-20 border-4 border-white"
                         >
                             <Image
                                 src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=700&h=600&fit=crop"

@@ -17,7 +17,8 @@ export function HeroSection() {
             label: "Ingénierie",
             title: ["JBH", "ENGINEERING", "SERVICES"],
             subtitle: "CONSTRUIRE L'AVENIR AVEC PRÉCISION",
-            buttonText: "VOIR NOS PROJETS"
+            buttonText: "VOIR NOS PROJETS",
+            buttonLink: "/projects"
         },
         {
             image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop",
@@ -25,7 +26,8 @@ export function HeroSection() {
             label: "Innovation",
             title: ["DESIGN", "MODERNE", "& CRÉATIF"],
             subtitle: "L'EXCELLENCE DANS CHAQUE DÉTAIL",
-            buttonText: "EN SAVOIR PLUS"
+            buttonText: "EN SAVOIR PLUS",
+            buttonLink: "/projects"
         },
         {
             image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1600&auto=format&fit=crop",
@@ -33,7 +35,8 @@ export function HeroSection() {
             label: "Architecture",
             title: ["SOLUTIONS", "DURABLES", "& AVENIR"],
             subtitle: "VOTRE VISION, NOTRE EXPERTISE",
-            buttonText: "COMMENCER"
+            buttonText: "COMMENCER",
+            buttonLink: "/projects"
         }
     ];
 
@@ -128,7 +131,7 @@ export function HeroSection() {
                                 className="group bg-foreground text-background px-8 py-4 rounded-full font-medium tracking-wide flex items-center gap-2 hover:bg-primary hover:text-white transition-colors duration-300"
                             >
                                 {slides[currentSlide].buttonText}
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" href={slides[currentSlide].buttonLink} />
                             </motion.button>
                         </motion.div>
                     </AnimatePresence>
