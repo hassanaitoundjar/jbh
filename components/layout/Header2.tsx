@@ -111,12 +111,14 @@ export function Header2() {
                     <div className="hidden lg:flex items-center gap-6">
                         <div className="flex flex-col items-end mr-2">
                             <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Appelez-nous</span>
-                            <a href="tel:+1234567890" className="text-sm font-bold font-heading text-secondary hover:text-primary transition-colors">
+                            <Link href="/contact" className="cursor-pointer text-sm font-bold font-heading text-secondary hover:text-primary transition-colors">
                                 {siteConfig.contact.phone}
-                            </a>
+                            </Link>
                         </div>
-                        <Button className="rounded-full px-6 font-bold tracking-wide shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300">
-                            Devis Gratuit <ArrowRight className="w-4 h-4 ml-2" />
+                        <Button asChild className="rounded-full px-6 font-bold tracking-wide shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300">
+                            <Link href="/contact">
+                                Devis Gratuit <ArrowRight className="w-4 h-4 ml-2" />
+                            </Link>
                         </Button>
                     </div>
 

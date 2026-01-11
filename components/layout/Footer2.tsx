@@ -23,10 +23,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
+    { name: "Facebook", icon: Facebook, href: siteConfig.social.facebook },
+    { name: "Instagram", icon: Instagram, href: siteConfig.social.instagram },
+    { name: "Twitter", icon: Twitter, href: siteConfig.social.twitter },
+    { name: "LinkedIn", icon: Linkedin, href: siteConfig.social.linkedin },
 ];
 
 export function Footer2() {
@@ -38,14 +38,15 @@ export function Footer2() {
 
                     {/* Brand Section */}
                     <div className="lg:col-span-4">
-                        <Link href="/" className="inline-block mb-6">
+                        <Link href="/" className=" mb-6 flex items-center gap-2">
                             <Image
-                                src="/images/logo-2.svg"
+                                src="/images/logo/single-logo.png"
                                 alt={siteConfig.name}
                                 width={160}
                                 height={50}
                                 className="h-12 w-auto"
                             />
+                            <h1 className="text-2xl font-bold text-gray-900">{siteConfig.name}</h1>
                         </Link>
                         <p className="text-gray-600 mb-8 max-w-sm leading-relaxed">
                             Créer des solutions architecturales innovantes alliant esthétique,

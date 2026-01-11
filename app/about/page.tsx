@@ -441,7 +441,7 @@ export default function AboutPage() {
                                     Commencer <ArrowRight className="w-4 h-4 ml-2" />
                                 </Link>
                             </Button>
-                            <Button variant="outline" className="rounded-full px-10 h-14 border-white/20 text-white hover:bg-white hover:text-secondary transition-all duration-300">
+                            <Button variant="outline" className="rounded-full px-10 h-14 border-white/20 text-black hover:bg-white hover:text-secondary transition-all duration-300">
                                 Voir les Projets
                             </Button>
                         </div>

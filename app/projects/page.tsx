@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Calendar, Ruler, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LogoSection } from "@/components/sections/LogoSection";
 
 const categories = [
     "Tous",
@@ -238,20 +239,20 @@ export default function ProjectsPage() {
                                     className={`group cursor-pointer ${project.featured && index < 2 ? "md:col-span-2 lg:col-span-1" : ""
                                         }`}
                                 >
-                                    <Link href={`/projects/${project.id}`} className="block relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-neutral-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500">
+                                    <Link href={`/projects/${project.id}`} className="block p-4 relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-neutral-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500">
                                         {/* Image */}
                                         <div className="relative aspect-4/3 overflow-hidden">
                                             <Image
                                                 src={project.image}
                                                 alt={project.title}
                                                 fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                                className="object-cover rounded-3xl  group-hover:scale-110 transition-transform duration-700"
                                             />
-                                            <div className="absolute inset-0 bg-linear-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                            <div className="absolute rounded-3xl inset-0 bg-linear-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                             {/* Overlay Content */}
                                             <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
-                                                <p className="text-white/80 text-sm mb-4 line-clamp-2">
+                                                <p className="text-white/80 text-sm m`b-4 line-clamp-2">
                                                     {project.description}
                                                 </p>
                                                 <Button
@@ -397,6 +398,7 @@ export default function ProjectsPage() {
                     </motion.div>
                 </div>
             </section>
+            <LogoSection />
         </main>
     );
 }

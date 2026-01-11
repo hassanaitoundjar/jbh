@@ -301,7 +301,7 @@ export function HeroSection2() {
                                 </Link>
 
                                 {/* Floating Stats Badge */}
-                                <div className="absolute -bottom-6 -left-6 bg-primary text-white px-6 py-3 rounded-2xl shadow-xl shadow-primary/30">
+                                <div className="absolute -bottom-10 -left-12 bg-primary text-white px-6 py-3 rounded-2xl shadow-xl shadow-primary/30">
                                     <div className="text-2xl font-bold">25+</div>
                                     <div className="text-xs text-white/80">Ans d'Expérience</div>
                                 </div>
