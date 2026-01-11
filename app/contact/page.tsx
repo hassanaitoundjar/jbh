@@ -50,12 +50,40 @@ export default function ContactPage() {
         message: "",
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Simulate form submission
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 3000);
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch("https://formspree.io/f/xwvveagk", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setIsSubmitted(true);
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    service: "",
+                    message: "",
+                });
+                setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                console.error("Form submission failed");
+                // You could handle error state here if desired
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -243,9 +271,12 @@ export default function ContactPage() {
 
                                     <Button
                                         type="submit"
-                                        className="w-full h-14 rounded-xl font-bold tracking-wide shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
+                                        disabled={isSubmitting}
+                                        className="w-full h-14 rounded-xl font-bold tracking-wide shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
-                                        Envoyer le Message <Send className="w-4 h-4 ml-2" />
+                                        {isSubmitting ? "Envoi en cours..." : (
+                                            <>Envoyer le Message <Send className="w-4 h-4 ml-2" /></>
+                                        )}
                                     </Button>
                                 </form>
                             )}
