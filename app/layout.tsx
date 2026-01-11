@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Josefin_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
+import { Header2 } from "@/components/layout/Header2";
 import { Footer2 } from "@/components/layout/Footer2";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { StructuredData } from "@/components/seo/StructuredData";
@@ -107,7 +107,7 @@ export default async function RootLayout({
         className={`${josefinSans.variable} ${dmSans.variable} font-body bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-foreground`}
         cz-shortcut-listen="true"
       >
-        <Header />
+        <Header2 />
         <main className="min-h-screen flex flex-col">
           {children}
         </main>
