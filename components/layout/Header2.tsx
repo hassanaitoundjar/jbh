@@ -110,7 +110,7 @@ export function Header2() {
                     {/* CTA Button */}
                     <div className="hidden lg:flex items-center gap-6">
                         <div className="flex flex-col items-end mr-2">
-                            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Appelez-nous</span>
+                            <span className="text-xs uppercase tracking-widest text-gray-600">Appelez-nous</span>
                             <Link href="/contact" className="cursor-pointer text-sm font-bold font-heading text-secondary hover:text-primary transition-colors">
                                 {siteConfig.contact.phone}
                             </Link>
@@ -125,7 +125,7 @@ export function Header2() {
                     {/* Mobile Menu Toggle */}
                     <Sheet>
                         <SheetTrigger asChild className="lg:hidden">
-                            <Button variant="ghost" size="icon" className="hover:bg-transparent">
+                            <Button variant="ghost" size="icon" className="hover:bg-transparent" aria-label="Ouvrir le menu">
                                 <Menu className="w-8 h-8 text-secondary" />
                             </Button>
                         </SheetTrigger>
@@ -183,7 +183,7 @@ export function Header2() {
                                                 <Phone className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
                                             </div>
                                             <div>
-                                                <p className="text-xs text-gray-400">Téléphone</p>
+                                                <p className="text-xs text-gray-500">Téléphone</p>
                                                 <p className="text-sm font-semibold text-gray-800">{siteConfig.contact.phone}</p>
                                             </div>
                                         </a>
@@ -194,7 +194,7 @@ export function Header2() {
                                                 <Mail className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
                                             </div>
                                             <div>
-                                                <p className="text-xs text-gray-400">Email</p>
+                                                <p className="text-xs text-gray-500">Email</p>
                                                 <p className="text-sm font-semibold text-gray-800">{siteConfig.contact.email}</p>
                                             </div>
                                         </a>
@@ -206,6 +206,7 @@ export function Header2() {
                                                     key={item.name}
                                                     href={item.href}
                                                     className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
+                                                    aria-label={item.name}
                                                 >
                                                     <item.icon className="w-4 h-4" />
                                                 </Link>

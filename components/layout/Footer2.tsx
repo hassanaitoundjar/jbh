@@ -69,6 +69,7 @@ export function Footer2() {
                                 />
                                 <button
                                     type="submit"
+                                    aria-label="S'abonner à la newsletter"
                                     className="px-4 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors"
                                 >
                                     <ArrowUpRight className="w-5 h-5" />
@@ -136,7 +137,7 @@ export function Footer2() {
                                     <Phone className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-gray-400 mb-1">Téléphone</p>
+                                    <p className="text-xs text-gray-500 mb-1">Téléphone</p>
                                     <p className="text-gray-700 font-medium group-hover:text-primary transition-colors">
                                         {siteConfig.contact.phone}
                                     </p>
@@ -153,7 +154,7 @@ export function Footer2() {
                                     <Mail className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-gray-400 mb-1">Email</p>
+                                    <p className="text-xs text-gray-500 mb-1">Email</p>
                                     <p className="text-gray-700 font-medium group-hover:text-primary transition-colors">
                                         {siteConfig.contact.email}
                                     </p>
@@ -169,7 +170,7 @@ export function Footer2() {
                                     <MapPin className="w-4 h-4 text-primary" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-gray-400 mb-1">Adresse</p>
+                                    <p className="text-xs text-gray-500 mb-1">Adresse</p>
                                     <p className="text-gray-700 font-medium text-sm leading-relaxed">
                                         {siteConfig.address.full}
                                     </p>
@@ -183,6 +184,7 @@ export function Footer2() {
                                 <motion.a
                                     key={social.name}
                                     href={social.href}
+                                    aria-label={`Suivez-nous sur ${social.name}`}
                                     className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
                                     whileHover={{ y: -3 }}
                                     whileTap={{ scale: 0.95 }}

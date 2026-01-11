@@ -53,7 +53,7 @@ export function HeroSection2() {
     const statsRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLDivElement>(null);
-    const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+    const scrollIndicatorRef = useRef<HTMLButtonElement>(null);
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -266,7 +266,7 @@ export function HeroSection2() {
                                             {stat.value}
                                         </span>
                                     </div>
-                                    <span className="text-white/50 text-sm font-medium uppercase tracking-wider">
+                                    <span className="text-white/70 text-sm font-medium uppercase tracking-wider">
                                         {stat.label}
                                     </span>
                                 </div>
@@ -329,14 +329,16 @@ export function HeroSection2() {
             </div>
 
             {/* Scroll Indicator */}
-            <div
+            {/* Scroll Indicator */}
+            <button
                 ref={scrollIndicatorRef}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer bg-transparent border-none p-2"
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                aria-label="Défiler vers le bas"
             >
-                <span className="text-white/50 text-xs uppercase tracking-widest">Défiler</span>
-                <ChevronDown className="w-6 h-6 text-white/50" />
-            </div>
+                <span className="text-white/70 text-xs uppercase tracking-widest">Défiler</span>
+                <ChevronDown className="w-6 h-6 text-white/70" />
+            </button>
 
             {/* Side Social Links */}
             <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col gap-6">
@@ -347,7 +349,7 @@ export function HeroSection2() {
                         href={siteConfig.social[social as keyof typeof siteConfig.social]}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-white/50 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                        className="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
                         style={{ writingMode: 'vertical-lr' }}
                     >
                         {social}
