@@ -11,7 +11,7 @@ const testimonials = [
         name: "Sarah Johnson",
         role: "PDG, TechCorp",
         image:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop",
         quote:
             "JBH ENGINEERING a transformé nos bureaux en un environnement moderne et inspirant. Leur attention aux détails et leur approche innovante ont dépassé toutes nos attentes.",
     },
@@ -19,7 +19,7 @@ const testimonials = [
         name: "Michael Chen",
         role: "Propriétaire",
         image:
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
         quote:
             "Travailler avec JBH ENGINEERING sur notre maison de rêve a été un véritable plaisir. Ils ont écouté nos besoins et créé un espace qui reflète parfaitement notre style de vie.",
     },
@@ -27,7 +27,7 @@ const testimonials = [
         name: "Emily Rodriguez",
         role: "Restauratrice",
         image:
-            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop",
         quote:
             "La créativité et le professionnalisme de l'équipe sont incomparables. Ils ont conçu un espace de restaurant que nos clients adorent et qui fonctionne parfaitement pour nos opérations.",
     },
@@ -35,7 +35,7 @@ const testimonials = [
         name: "James Wilson",
         role: "Chef de Projet",
         image:
-            "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&h=200&auto=format&fit=crop",
         quote:
             "Le niveau de précision et d'engagement envers les normes de qualité affiché par l'équipe était impressionnant. Des rapports détaillés nous ont tenus informés à chaque étape.",
     },
@@ -43,7 +43,7 @@ const testimonials = [
         name: "Sofia Martinez",
         role: "Designer d'Intérieur",
         image:
-            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&auto=format&fit=crop",
         quote:
             "Collaborer avec JBH Engineering a été une expérience fluide. Ils ont parfaitement compris la vision esthétique et exécuté les éléments structurels de manière impeccable.",
     },
@@ -88,12 +88,14 @@ export function TestimonialsSection() {
                     <div className="flex gap-4">
                         <button
                             onClick={scrollPrev}
+                            aria-label="Témoignage précédent"
                             className="w-14 h-14 rounded-full border border-border bg-background hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 flex items-center justify-center group"
                         >
                             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
                         </button>
                         <button
                             onClick={scrollNext}
+                            aria-label="Témoignage suivant"
                             className="w-14 h-14 rounded-full border border-border bg-background hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 flex items-center justify-center group"
                         >
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
