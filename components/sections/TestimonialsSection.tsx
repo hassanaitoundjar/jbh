@@ -127,9 +127,9 @@ export function TestimonialsSection() {
                                             <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                                         </Avatar>
                                         <div>
-                                            <h4 className="font-bold text-foreground text-lg leading-tight">
+                                            <h3 className="font-bold text-foreground text-lg leading-tight">
                                                 {testimonial.name}
-                                            </h4>
+                                            </h3>
                                             <p className="text-sm text-primary font-medium">
                                                 {testimonial.role}
                                             </p>

@@ -106,14 +106,14 @@ export function ProcessSection() {
                                     : "bg-transparent border-transparent hover:bg-white/50 dark:hover:bg-neutral-800/50"
                                     }`}
                             >
-                                <span className={`text-xl font-bold font-mono transition-colors duration-300 ${index === currentStep ? "text-primary" : "text-neutral-400"
+                                <span className={`text-xl font-bold font-mono transition-colors duration-300 ${index === currentStep ? "text-primary" : "text-neutral-500"
                                     }`}>
                                     {step.number}
                                 </span>
-                                <span className={`text-lg font-bold transition-colors duration-300 ${index === currentStep ? "text-neutral-900 dark:text-white" : "text-neutral-500"
+                                <h3 className={`text-lg font-bold transition-colors duration-300 ${index === currentStep ? "text-neutral-900 dark:text-white" : "text-neutral-600"
                                     }`}>
                                     {step.title}
-                                </span>
+                                </h3>
                                 {index === currentStep && (
                                     <motion.div
                                         layoutId="active-check"

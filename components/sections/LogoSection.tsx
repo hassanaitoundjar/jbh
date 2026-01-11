@@ -118,7 +118,7 @@ export function LogoSection() {
                     {[...logos, ...logos].map((logo, index) => (
                         <div
                             key={index}
-                            className="flex flex-col items-center justify-center gap-4 opacity-40 hover:opacity-100 transition-opacity duration-300 cursor-pointer w-24 md:w-32 group/logo"
+                            className="flex flex-col items-center justify-center gap-4 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer w-24 md:w-32 group/logo"
                         >
                             <div className="w-16 h-16 md:w-20 md:h-20 text-foreground group-hover/logo:text-primary transition-colors duration-300">
                                 {logo.svg}

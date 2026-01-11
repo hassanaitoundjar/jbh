@@ -46,7 +46,7 @@ export function Footer2() {
                                 height={50}
                                 className="h-12 w-auto"
                             />
-                            <h1 className="text-2xl font-bold text-gray-900">{siteConfig.name}</h1>
+                            <span className="text-2xl font-bold text-gray-900">{siteConfig.name}</span>
                         </Link>
                         <p className="text-gray-600 mb-8 max-w-sm leading-relaxed">
                             Créer des solutions architecturales innovantes alliant esthétique,
@@ -55,9 +55,9 @@ export function Footer2() {
 
                         {/* Newsletter */}
                         <div className="bg-gray-50 rounded-2xl p-6">
-                            <h4 className="text-sm font-semibold text-gray-900 mb-3">
+                            <h3 className="text-sm font-semibold text-gray-900 mb-3">
                                 Restez informé
-                            </h4>
+                            </h3>
                             <p className="text-sm text-gray-500 mb-4">
                                 Abonnez-vous à notre newsletter pour les dernières nouvelles.
                             </p>
