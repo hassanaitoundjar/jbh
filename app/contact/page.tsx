@@ -75,9 +75,6 @@ export default function ContactPage() {
                     message: "",
                 });
                 setTimeout(() => setIsSubmitted(false), 5000);
-            } else {
-                console.error("Form submission failed");
-                // You could handle error state here if desired
             }
         } catch (error) {
             console.error("Error submitting form:", error);

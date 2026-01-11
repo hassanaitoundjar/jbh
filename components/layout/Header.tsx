@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Phone, Mail, MapPin, ArrowRight, Instagram, Facebook, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -84,17 +85,14 @@ export function Header() {
                 <div className="container mx-auto px-4 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:rotate-3 transition-transform duration-300 shadow-lg shadow-primary/30">
-                            J
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-xl font-heading font-bold text-secondary tracking-tight leading-none">
-                                JBH
-                            </span>
-                            <span className="text-[0.65rem] font-bold tracking-[0.2em] text-primary uppercase leading-none">
-                                Engineering
-                            </span>
-                        </div>
+                        <Image
+                            src="/images/logo/jbh.png"
+                            alt="JBH Engineering"
+                            width={180}
+                            height={60}
+                            className="h-12 w-auto object-contain"
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Menu */}
@@ -145,17 +143,13 @@ export function Header() {
 
                                 <div className="p-8 border-b border-white/10 z-10">
                                     <div className="flex items-center gap-2">
-                                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30">
-                                            J
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <span className="text-xl font-heading font-bold text-white tracking-tight leading-none">
-                                                JBH
-                                            </span>
-                                            <span className="text-[0.65rem] font-bold tracking-[0.2em] text-primary uppercase leading-none">
-                                                Engineering
-                                            </span>
-                                        </div>
+                                        <Image
+                                            src="/images/logo/jbh.png"
+                                            alt="JBH Engineering"
+                                            width={180}
+                                            height={60}
+                                            className="h-12 w-auto object-contain"
+                                        />
                                     </div>
                                 </div>
 

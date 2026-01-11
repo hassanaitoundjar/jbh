@@ -34,7 +34,7 @@ export function PrinciplesSection() {
                             className="absolute top-0 w-[85%] left-0 h-[80%] rounded-2xl overflow-hidden shadow-2xl z-10"
                         >
                             <Image
-                                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=400&fit=crop"
+                                src="/images/principles/1.jpeg"
                                 alt="Modern Interior Desk"
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     siteName: "JBH ENGINEERING Architecture",
     title: "JBH ENGINEERING | Architecture & Design Visionnaire",
     description: "JBH ENGINEERING est un studio d'architecture de premier plan offrant des expériences spatiales durables, innovantes et esthétiquement profondes.",
+  },
+  icons: {
+    icon: "/images/logo/single-logo.png",
+    shortcut: "/images/logo/single-logo.png",
+    apple: "/images/logo/single-logo.png",
   }
 };
 

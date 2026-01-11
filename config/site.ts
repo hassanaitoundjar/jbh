@@ -8,11 +8,11 @@ export const siteConfig = {
 
     // Contact Information
     contact: {
-        phone: "+212628096812",
-        phoneLink: "tel:+212628096812",
+        phone: "+212-628-096-812",
+        phoneLink: "tel:+212-628-096-812",
         email: "hassanprof96@gmail.com",
         emailLink: "mailto:hassanprof96@gmail.com",
-        whatsapp: "212628096812", // Without + or spaces
+        whatsapp: "212-628-096-812", // Without + or spaces
         whatsappMessage: "Bonjour ! Je suis intéressé par vos services d'architecture.",
     },
 

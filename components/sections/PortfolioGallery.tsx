@@ -47,14 +47,14 @@ export default function PortfolioGallery() {
         },
         {
             id: 3,
-            image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
+            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
             title: 'Havre Écologique',
             category: 'Durable',
             size: 'small'
         },
         {
             id: 4,
-            image: 'https://images.unsplash.com/photo-1600566753081-058c8d0395a4?w=800&h=600&fit=crop',
+            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
             title: 'Hub Métro',
             category: 'Urbanisme',
             size: 'wide'

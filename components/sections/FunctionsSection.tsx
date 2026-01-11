@@ -62,7 +62,7 @@ export default function FunctionsSection() {
     }, [emblaApi]);
 
     return (
-        <section className="py-24 container mx-auto px-4">
+        <section className="py-24 w-full mx-auto px-4">
 
             <div className="bg-neutral-900 rounded-[3rem] text-white relative overflow-hidden px-4 md:px-12 py-20">
                 <Image
@@ -72,7 +72,7 @@ export default function FunctionsSection() {
                     className="object-cover"
                 />
 
-                <div className="relative z-10">
+                <div className="relative  container mx-auto px-4 z-10">
 
                     {/* Header */}
                     <div className="flex flex-col items-center mb-16 text-center">
@@ -126,7 +126,7 @@ export default function FunctionsSection() {
                                         <Link href={`/projects/${project.id}`}>
                                             <div className="bg-white rounded-[2rem] overflow-hidden group/card h-full hover:shadow-2xl transition-all duration-500 relative cursor-pointer">
                                                 {/* Image Section */}
-                                                <div className="relative h-64 overflow-hidden">
+                                                <div className="relative h-64 rounded-[2rem] m-2 overflow-hidden">
                                                     <div className="absolute inset-0 bg-gray-900/10 group-hover/card:bg-gray-900/0 transition-colors duration-500 z-10"></div>
                                                     <img
                                                         src={project.image}
@@ -148,6 +148,7 @@ export default function FunctionsSection() {
                                                 {/* Content Section */}
                                                 <div className="p-8">
                                                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover/card:text-primary transition-colors">{project.title}</h3>
+                                                    <span className='block h-[1px] w-full bg-primary mb-4 opacity-30'></span>
                                                     <div className="flex items-center gap-1.5 text-gray-500 text-sm mb-4">
                                                         <MapPin className="w-4 h-4 text-primary" />
                                                         {project.location}

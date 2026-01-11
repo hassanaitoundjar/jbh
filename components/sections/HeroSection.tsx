@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { Twitter, Facebook, Instagram, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { siteConfig } from '@/config/site';
 import Image from 'next/image';
 import { url } from 'inspector';
+import Link from 'next/link';
 
 export function HeroSection() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -69,15 +71,15 @@ export function HeroSection() {
                 className="hidden lg:flex fixed left-8 top-1/2 -translate-y-1/2 z-40 flex-col gap-8 text-foreground/60"
             >
                 <div className="h-24 w-px bg-border mx-auto" />
-                <a href="#" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="Twitter">
+                <Link href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="Twitter">
                     <Twitter className="w-5 h-5" />
-                </a>
-                <a href="#" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="Facebook">
+                </Link>
+                <Link href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="Facebook">
                     <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="Instagram">
+                </Link>
+                <Link href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 transition-all duration-300" aria-label="Instagram">
                     <Instagram className="w-5 h-5" />
-                </a>
+                </Link>
                 <div className="h-24 w-px bg-border mx-auto" />
             </motion.div>
 
