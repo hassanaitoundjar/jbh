@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function PortfolioGallery() {
-    const [activeFilter, setActiveFilter] = useState('All');
+    const [activeFilter, setActiveFilter] = useState('Tous');
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
     const scrollingTexts = [
@@ -200,10 +201,10 @@ export default function PortfolioGallery() {
 
                 {/* View More Button */}
                 <div className="mt-16 text-center">
-                    <button className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-medium text-foreground overflow-hidden rounded-full border border-primary/20 hover:border-primary transition-colors duration-300">
+                    <Link href="/projects" className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-medium text-foreground overflow-hidden rounded-full border border-primary/20 hover:border-primary transition-colors duration-300">
                         <span className="mr-2">Voir Tous les Projets</span>
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

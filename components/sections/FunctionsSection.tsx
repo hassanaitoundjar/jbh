@@ -173,7 +173,7 @@ export default function FunctionsSection() {
                         transition={{ delay: 0.4 }}
                         className="flex justify-center mt-16"
                     >
-                        <Link href="/projects" className="flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-primary hover:text-white transition-all duration-300 group">
+                        <Link href="/projects" className="flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-primary hover:text-white transition-all duration-300 group cursor-pointer">
                             <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors duration-300">
                                 <MoveRight className="w-4 h-4" />
                             </span>

@@ -8,23 +8,23 @@ export const siteConfig = {
 
     // Contact Information
     contact: {
-        phone: "+212-628-096-812",
-        phoneLink: "tel:+212-628-096-812",
-        email: "hassanprof96@gmail.com",
-        emailLink: "mailto:hassanprof96@gmail.com",
-        whatsapp: "212-628-096-812", // Without + or spaces
+        phone: "+212 661 858 581",
+        phoneLink: "tel:+212 661 858 581",
+        email: "Contact@jbh.ma",
+        emailLink: "mailto:Contact@jbh.ma",
+        whatsapp: "212661858581", // Without + or spaces
         whatsappMessage: "Bonjour ! Je suis intéressé par vos services d'architecture.",
     },
 
     // Address
     address: {
-        street: "123 Boulevard de l'Innovation",
+        street: "Bur N°7, 2ème étage, Imm Ennassim, Bd Hassan I, Cité El Massira – Agadir",
         suite: "Suite 500",
         city: "AGADIR",
         state: "AG",
         zip: "80000",
         country: "MA",
-        full: "123 Boulevard de l'Innovation, Suite 500, 80000 Agadir, Maroc",
+        full: "Bur N°7, 2ème étage, Imm Ennassim, Bd Hassan I, Cité El Massira – Agadir",
         short: "80000, Agadir",
         mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13218.123456789!2d-5.5678901234567!3d33.8901234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDUzJzI0LjQiTiA1wrAzNCcwNC40Ilc!5e0!3m2!1sen!2sma!4v1234567890123!5m2!1sen!2sma",
     },
