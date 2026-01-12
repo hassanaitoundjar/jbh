@@ -210,8 +210,7 @@ export function HeroSection2() {
                                 {siteConfig.tagline}
                             </span>
                         </div>
-                        Ingénierie
-                        D'excellenc
+
                         {/* Main Title */}
                         <h1 className="mb-6 overflow-hidden">
                             <span
