@@ -9,13 +9,13 @@ const processSteps = [
         number: "01",
         icon: Users,
         title: "Consultation",
-        description: "Nous commençons par écouter attentivement vos besoins, désirs et objectifs. Cette étape fondamentale garantit que chaque décision de conception correspond à votre vision.",
+        description: "Nous commençons par écouter attentivement vos besoins, désirs et objectifs. Cette étape fondamentale garantit que chaque solution technique correspond à votre vision.",
     },
     {
         number: "02",
         icon: PenTool,
         title: "Conception",
-        description: "Nos architectes traduisent votre vision en concepts créatifs et croquis détaillés, explorant forme, fonction et possibilités esthétiques.",
+        description: "Nos ingénieurs traduisent votre besoin en solutions techniques créatifs et plans détaillés, explorant ingénierie, confort et technique.",
     },
     {
         number: "03",
@@ -27,7 +27,7 @@ const processSteps = [
         number: "04",
         icon: HardHat,
         title: "Construction",
-        description: "Avec une gestion précise, nous supervisons le processus de construction, garantissant que les matériaux et l'artisanat répondent à nos normes exigeantes.",
+        description: "Avec une gestion précise, nous supervisons le processus de construction, garantissant que les methodes, installations et matériaux répondent aux normes et règlementations.",
     },
 ];
 
@@ -67,9 +67,9 @@ export function ProcessSection() {
                             transition={{ delay: 0.1 }}
                             className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white leading-tight"
                         >
-                            Transformer les Idées en
+                            Transformer les projets
                             <br />
-                            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">Monuments</span>
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">en réalité</span>
                         </motion.h2>
                     </div>
 

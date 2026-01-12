@@ -40,36 +40,34 @@ const values = [
 const team = [
     {
         name: "Mr. Abdelaly Jabbad",
-        role: "Ingénieur Génie Industriel",
-        description: "Diplômé de l'ENSA Agadir, responsable département lots techniques, sécurité incendie et suivi chantiers.",
+        role: "Ingénieur d'État en lots techniques, breveté en Sécurité incendie",
+        description: "Responsable département lots techniques, sécurité incendie.",
         qualifications: [
             "Étude et suivi lots techniques",
-            "Exécution des installations techniques",
+            "Supervision des installations techniques",
             "Contrôle technique",
-            "Brevet de Sécurité incendie",
+            "Etudes Sécurité incendie",
         ],
         image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
     },
     {
         name: "Mr. Mohamed El Hilali",
-        role: "Ingénieur Génie Civil",
-        description: "Diplômé de la FST Marrakech, responsable département structure et suivi chantiers.",
+        role: "Ingénieur d'État en génie civil",
+        description: "Responsable département structure ",
         qualifications: [
-            "Exécution travaux béton armé",
-            "Étude et suivi béton armé",
+            "Étude et suivi béton armé et charpente métallique",
             "Contrôle technique construction",
-            "Technique de construction",
         ],
         image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop",
     },
 ];
 
 const milestones = [
-    { year: "2010", title: "Création du Bureau d'Études", description: "JBH Engineering a été fondé à Agadir avec une vision claire : devenir un BET performant dans le métier du bâtiment tous corps d'état." },
-    { year: "2014", title: "Expansion Régionale", description: "Extension de nos services aux régions du sud du Maroc : Laâyoune, Dakhla, Smara et Guelmim." },
-    { year: "2018", title: "Projets de Santé", description: "Réalisation de plusieurs cliniques et établissements de santé, consolidant notre expertise dans ce secteur." },
-    { year: "2021", title: "Projets Industriels", description: "Développement de notre expertise dans les projets industriels : usines, entrepôts frigorifiques." },
-    { year: "2024", title: "100+ Projets", description: "Atteinte du cap des 100 projets réalisés avec succès au Maroc." },
+    { year: "2018", title: "Création du Bureau d'Études", description: "JBH Engineering a été fondé à Agadir avec une vision claire : devenir un BET performant dans le métier du bâtiment tous corps d'état." },
+    { year: "2020", title: "Expansion Régionale", description: "Extension de nos services aux régions du sud du Maroc : Laâyoune, Dakhla, Smara et Guelmim." },
+    { year: "2022", title: "Projets de Santé", description: "Réalisation de plusieurs cliniques et établissements de santé, consolidant notre expertise dans ce secteur." },
+    { year: "2024", title: "Projets Industriels", description: "Développement de notre expertise dans les projets industriels : usines, entrepôts frigorifiques." },
+    { year: "2025", title: "100+ Projets", description: "Atteinte du cap des 100 projets réalisés avec succès au Maroc." },
 ];
 
 const containerVariants = {
@@ -127,7 +125,7 @@ export default function AboutPage() {
                             </span>
                         </h1>
                         <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl">
-                            JBH Engineering intervient dans le génie civil et les lots techniques pour devenir
+                            JBH Engineering intervient dans le génie civil et les lots techniques comme
                             un BET performant dans le métier du bâtiment tous corps d'état.
                         </p>
                     </motion.div>
@@ -218,7 +216,7 @@ export default function AboutPage() {
                             </h2>
                             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                                 JBH Engineering est un bureau d'études techniques spécialisé dans le génie civil et les lots
-                                techniques. Notre mission : fournir des études d'exécution béton armé optimisées et sécurisées,
+                                techniques. Notre mission : fournir des études d'exécution de structure optimisées et sécurisées,
                                 ainsi que des études d'exécution lots techniques de qualité supérieure.
                             </p>
                             <p className="text-muted-foreground text-lg leading-relaxed mb-8">

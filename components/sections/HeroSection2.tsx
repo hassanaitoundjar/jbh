@@ -19,20 +19,20 @@ gsap.registerPlugin(ScrollTrigger);
 const slides = [
     {
         image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop",
-        title: "Architecture",
-        subtitle: "Visionnaire",
-        description: "Créer des espaces qui inspirent et transforment la vie quotidienne",
+        title: "JBH",
+        subtitle: "ENGINEERING",
+        description: "Acompagner les professionnels dans la réalisation de leurs projets",
     },
     {
         image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop",
-        title: "Design",
-        subtitle: "Innovant",
-        description: "Fusionner l'esthétique et la fonctionnalité dans chaque projet",
+        title: "Solutions",
+        subtitle: "Innovantes",
+        description: "Fusionner le technique et la fonctionnalité dans chaque projet",
     },
     {
         image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop",
         title: "Ingénierie",
-        subtitle: "Excellence",
+        subtitle: "D'excellence",
         description: "Construire l'avenir avec précision et durabilité",
     },
 ];
@@ -210,7 +210,8 @@ export function HeroSection2() {
                                 {siteConfig.tagline}
                             </span>
                         </div>
-
+                        Ingénierie
+                        D'excellenc
                         {/* Main Title */}
                         <h1 className="mb-6 overflow-hidden">
                             <span
@@ -289,7 +290,7 @@ export function HeroSection2() {
                                     Commencez Votre Projet
                                 </h3>
                                 <p className="text-white/60 mb-6">
-                                    Consultation gratuite avec nos architectes experts pour transformer votre vision en réalité.
+                                    Consultation gratuite avec nos ingénieurs experts pour transformer votre vision en réalité.
                                 </p>
 
                                 <Link
@@ -302,7 +303,7 @@ export function HeroSection2() {
 
                                 {/* Floating Stats Badge */}
                                 <div className="absolute -bottom-10 -left-12 bg-primary text-white px-6 py-3 rounded-2xl shadow-xl shadow-primary/30">
-                                    <div className="text-2xl font-bold">25+</div>
+                                    <div className="text-2xl font-bold">5+</div>
                                     <div className="text-xs text-white/80">Ans d'Expérience</div>
                                 </div>
                             </div>

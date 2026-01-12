@@ -6,23 +6,23 @@ import { motion, Variants } from "framer-motion";
 const services = [
     {
         icon: Lightbulb,
-        title: "Planification Visionnaire",
-        description: "Transformer les idées en plans détaillés et réalisables.",
+        title: "Analyse et Conception",
+        description: "Étude approfondie de vos besoins et conception de solutions techniques adaptées à votre projet.",
     },
     {
         icon: Cog,
         title: "Ingénierie Détaillée",
-        description: "Intégrer harmonieusement la solidité et l'esthétique.",
+        description: "Réalisation des plans d'exécution et notes de calcul pour chaque corps d'état.",
     },
     {
         icon: Leaf,
-        title: "Approche Durable",
-        description: "Allier beauté et responsabilité environnementale.",
+        title: "Suivi et Coordination",
+        description: "Accompagnement sur chantier, coordination des intervenants et contrôle qualité.",
     },
     {
         icon: Palette,
-        title: "Expertise en Design",
-        description: "Fusionner concepts modernes et valeurs architecturales classiques.",
+        title: "Livraison et Réception",
+        description: "Assistance à la réception des travaux et remise des documents techniques.",
     },
 ];
 

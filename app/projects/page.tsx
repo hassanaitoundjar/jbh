@@ -215,8 +215,8 @@ export default function ProjectsPage() {
                             </span>
                         </h1>
                         <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl">
-                            Explorez notre portefeuille diversifié de projets architecturaux et d'ingénierie
-                            qui mettent en valeur notre engagement envers l'innovation et l'excellence.
+                            Explorez notre portefeuille diversifié de projets
+                            qui mettent en valeur notre engagement envers l'excellence technique.
                         </p>
                     </motion.div>
                 </div>
@@ -414,8 +414,8 @@ export default function ProjectsPage() {
                             </span>
                         </h2>
                         <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
-                            Que vous planifiez une nouvelle construction, une rénovation ou un projet de design d'intérieur,
-                            notre équipe est prête à donner vie à votre vision.
+                            Que vous planifiez une nouvelle construction, une rénovation ou un aménagement,
+                            notre équipe est prête à partager votre vision.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button asChild className="rounded-full px-10 h-14 font-bold tracking-wide shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5 transition-all duration-300">

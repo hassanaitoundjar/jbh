@@ -3,13 +3,15 @@
 export const siteConfig = {
     // Company Info
     name: "JBH ENGINEERING",
-    tagline: "Architecture et Design Visionnaires",
+    tagline: "Bureau d'Études Techniques",
     description: "JBH ENGINEERING est un studio d'architecture de premier plan offrant des expériences spatiales durables, innovantes et esthétiquement profondes.",
 
     // Contact Information
     contact: {
-        phone: "+212 661 858 581",
-        phoneLink: "tel:+212 661 858 581",
+        phone: "+212 661 85 85 81",
+        phone2: "+212 661 51 61 09",
+        phone3: "+212 528 23 25 26",
+        phoneLink: "tel:+212 661 85 85 81",
         email: "Contact@jbh.ma",
         emailLink: "mailto:Contact@jbh.ma",
         whatsapp: "212661858581", // Without + or spaces
@@ -34,11 +36,11 @@ export const siteConfig = {
         weekdays: "Lundi - Vendredi",
         weekdayHours: "09h00 - 18h00",
         saturday: "Samedi",
-        saturdayHours: "10h00 - 16h00",
+        saturdayHours: "09h00 - 12h00",
         sunday: "Dimanche",
         sundayHours: "Fermé",
         timezone: "EST",
-        full: "Lun-Ven : 09h00 - 18h00 | Sam : 10h00 - 16h00",
+        full: "Lun-Ven : 09h00 - 18h00 | Sam : 09h00 - 12h00",
     },
 
     // Social Media Links

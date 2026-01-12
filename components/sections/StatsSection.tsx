@@ -5,9 +5,9 @@ import { Award, Users, Building, Smile, ArrowUpRight } from "lucide-react";
 import { motion, useInView, useMotionValue, useSpring, Variants } from "framer-motion";
 
 const stats = [
-    { icon: Award, value: 150, label: "Awards Won", suffix: "+" },
+    { icon: Award, value: 10, label: "Awards Won", suffix: "+" },
     { icon: Building, value: 500, label: "Projects Completed", suffix: "+" },
-    { icon: Users, value: 50, label: "Team Members", suffix: "+" },
+    { icon: Users, value: 20, label: "Team Members", suffix: "+" },
     { icon: Smile, value: 1000, label: "Happy Clients", suffix: "+" },
 ];
 
@@ -112,7 +112,7 @@ export function StatsSection() {
                     >
                         Reviewing our journey through numbers. Each figure represents a milestone
                         in our commitment to delivering superior engineering solutions and
-                        architectural innovation.
+                        technical innovation.
                     </motion.p>
                 </div>
 

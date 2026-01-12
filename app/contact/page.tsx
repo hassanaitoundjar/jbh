@@ -18,7 +18,7 @@ const contactInfo = [
     {
         icon: Phone,
         title: "Appelez-nous",
-        details: [siteConfig.contact.phone],
+        details: [siteConfig.contact.phone, siteConfig.contact.phone2, siteConfig.contact.phone3],
     },
     {
         icon: Mail,
@@ -33,12 +33,14 @@ const contactInfo = [
 ];
 
 const services = [
-    "Conception Architecturale",
-    "Ingénierie Structurelle",
-    "Design d'Intérieur",
+    "Securite Incendie",
+    "Ingénierie de Structure",
+    "Ingenierie desLots Techniques",
     "Gestion de Projet",
-    "Urbanisme",
-    "Rénovation & Restauration",
+    "Voirie et Reseaux Divers ",
+    "Consulting et Assistance",
+    "Expertise Technique",
+
 ];
 
 export default function ContactPage() {
@@ -96,10 +98,10 @@ export default function ContactPage() {
                     <div className="absolute inset-0 bg-secondary/95 z-10" />
                     <img
                         src="/bg/bg.jpeg"
-                        alt="Blueprint Background"
+                        alt="Blueprint detailsBackground"
                         className="w-full h-full object-cover opacity-20 invert mix-blend-overlay"
                     />
-                </div>
+                </div>contactInfo
 
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
@@ -115,7 +117,7 @@ export default function ContactPage() {
                         <div className="flex items-center gap-2 mb-6">
                             <Link href="/" className="text-gray-400 hover:text-primary transition-colors">Accueil</Link>
                             <span className="text-gray-600">/</span>
-                            <span className="text-white">Contact</span>
+                            <span className="text-white">Contact</span>contactInfo
                         </div>
 
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
@@ -128,7 +130,7 @@ export default function ContactPage() {
                             </span>
                         </h1>
                         <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl">
-                            Prêt à transformer votre vision en réalité ? Contactez notre équipe d'ingénieurs experts et d'architectes dès aujourd'hui.
+                            Prêt à transformer votre vision en réalité ? Contactez notre équipe d'ingénieurs experts dès aujourd'hui.
                         </p>
                     </motion.div>
                 </div>
@@ -208,7 +210,7 @@ export default function ContactPage() {
                                                 name="name"
                                                 value={formData.name}
                                                 onChange={handleChange}
-                                                placeholder="John Doe"
+                                                placeholder="Nom Complet"
                                                 className="h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary"
                                                 required
                                             />
@@ -220,7 +222,7 @@ export default function ContactPage() {
                                                 type="email"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                placeholder="john@example.com"
+                                                placeholder="nom@example.com"
                                                 className="h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary"
                                                 required
                                             />
@@ -234,7 +236,7 @@ export default function ContactPage() {
                                                 name="phone"
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                placeholder="+1 (555) 000-0000"
+                                                placeholder="+212 6 55 55 55 55"
                                                 className="h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary"
                                             />
                                         </div>
@@ -297,14 +299,14 @@ export default function ContactPage() {
                                     </span>
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                                    Avec plus de 20 ans d'expérience dans la conception architecturale et l'ingénierie de construction,
-                                    nous donnons vie à votre vision avec précision et innovation.
+                                    Avec plus de 15 ans d'expérience dans l'ingénierie de construction,
+                                    nous partageons votre vision avec précision et innovation.
                                 </p>
 
                                 <div className="space-y-4">
                                     {[
-                                        "Équipe de design primée",
-                                        "Pratiques de construction durable",
+                                        "Équipe ingénierie primée",
+                                        "Solutions de construction durable",
                                         "Livraison de projet à temps",
                                         "Prix transparents",
                                     ].map((item, i) => (
@@ -365,7 +367,7 @@ export default function ContactPage() {
             <section className="h-[500px] relative">
                 <div className="absolute inset-0 bg-secondary/5">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13218.123456789!2d-5.5678901234567!3d33.8901234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDUzJzI0LjQiTiA1wrAzNCcwNC40Ilc!5e0!3m2!1sen!2sma!4v1234567890123!5m2!1sen!2sma"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.8436516987776!2d-9.567568323835625!3d30.412177501053062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b74695c4cc19%3A0x531d7ace06ffd6ee!2sJBH%20ENGINEERING!5e0!3m2!1sen!2sma!4v1768253213092!5m2!1sen!2sma"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}

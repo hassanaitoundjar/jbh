@@ -177,13 +177,13 @@ export default function BlogPage() {
                             Informations & Articles
                         </span>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                            Blog d'Architecture <br />
+                            Blog d'ingénierie <br />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">
                                 & de Design
                             </span>
                         </h1>
                         <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl">
-                            Explorez les dernières tendances, innovations et idées en architecture,
+                            Explorez les dernières tendances, innovations et idées en ingénierie,
                             construction et design d'intérieur de notre équipe d'experts.
                         </p>
                     </motion.div>

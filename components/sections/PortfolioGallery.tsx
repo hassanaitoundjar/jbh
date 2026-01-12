@@ -122,7 +122,8 @@ export default function PortfolioGallery() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-muted-foreground text-lg md:text-xl font-light"
                     >
-                        Nous créons des espaces qui inspirent, perdurent et élèvent l'expérience humaine grâce à une architecture visionnaire et un design méticuleux.
+
+                        Notre expertise pluridisciplinaire et notre approche sur mesure font de nous le partenaire idéal pour vos projets d'ingénierie les plus ambitieux.
                     </motion.p>
                 </div>
 

@@ -100,7 +100,7 @@ export default function FunctionsSection() {
                             transition={{ delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl leading-tight font-heading"
                         >
-                            Notre Chemin Vers <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">l'Excellence Architecturale</span>
+                            Notre Chemin Vers <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">l'Excellence Technique</span>
                         </motion.h2>
                     </div>
 

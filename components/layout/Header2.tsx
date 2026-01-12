@@ -83,9 +83,9 @@ export function Header2() {
                         <Image
                             src="/images/logo/jbh.png"
                             alt="JBH Engineering"
-                            width={180}
-                            height={60}
-                            className="h-12 w-auto object-contain"
+                            width={300}
+                            height={200}
+                            className="h-20 w-auto object-contain"
                             priority
                         />
                     </Link>
