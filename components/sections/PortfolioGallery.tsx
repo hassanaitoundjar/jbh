@@ -25,53 +25,53 @@ export default function PortfolioGallery() {
 
     const categories = [
         'Tous',
-        'Architecture Intérieure',
-        'Résidentiel',
-        'Durable',
-        'Urbanisme'
+        'Santé',
+        'Éducation',
+        'Industriel',
+        'Infrastructure',
     ];
 
     const projects = [
         {
             id: 1,
-            image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&h=600&fit=crop',
-            title: 'Penthouse Elysium',
-            category: 'Architecture Intérieure',
+            image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=600&fit=crop',
+            title: 'Clinique Ibn Rochd',
+            category: 'Santé',
             size: 'large'
         },
         {
             id: 2,
-            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
-            title: 'Résidence Vertex',
-            category: 'Résidentiel',
+            image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=600&fit=crop',
+            title: 'CMC (OFPPT)',
+            category: 'Éducation',
             size: 'small'
-        },
-        {
-            id: 3,
-            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
-            title: 'Havre Écologique',
-            category: 'Durable',
-            size: 'small'
-        },
-        {
-            id: 4,
-            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
-            title: 'Hub Métro',
-            category: 'Urbanisme',
-            size: 'wide'
         },
         {
             id: 5,
-            image: 'https://images.unsplash.com/photo-1600607687644-c7f32b50b5c2?w=800&h=600&fit=crop',
-            title: 'Tour Skyline',
-            category: 'Urbanisme',
+            image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop',
+            title: 'École Al-Hanane Privée',
+            category: 'Éducation',
             size: 'small'
         },
         {
-            id: 6,
-            image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop',
-            title: 'Loft Lumina',
-            category: 'Architecture Intérieure',
+            id: 7,
+            image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
+            title: 'Dania Land Parc',
+            category: 'Infrastructure',
+            size: 'wide'
+        },
+        {
+            id: 10,
+            image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=600&fit=crop',
+            title: 'Usine Parapharmaceutique',
+            category: 'Industriel',
+            size: 'small'
+        },
+        {
+            id: 9,
+            image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&h=600&fit=crop',
+            title: 'Clinique & Annexes Hospitalier',
+            category: 'Santé',
             size: 'small'
         },
     ];

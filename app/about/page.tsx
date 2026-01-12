@@ -8,64 +8,68 @@ import { Button } from "@/components/ui/button";
 
 
 const stats = [
-    { value: "25+", label: "Années d'Expérience" },
-    { value: "500+", label: "Projets Réalisés" },
-    { value: "150+", label: "Récompenses Gagnées" },
-    { value: "50+", label: "Équipe d'Experts" },
+    { value: "15+", label: "Années d'Expérience" },
+    { value: "100+", label: "Projets Réalisés" },
+    { value: "100%", label: "Satisfaction Client" },
+    { value: "12", label: "Régions Desservies" },
 ];
 
 const values = [
     {
         icon: Target,
-        title: "Précision",
-        description: "Chaque détail compte. Nous livrons des projets avec une attention méticuleuse à la précision et à la qualité.",
+        title: "Personnel Qualifié",
+        description: "Notre équipe d'ingénieurs hautement qualifiés assure une expertise technique irréprochable sur chaque projet.",
     },
     {
         icon: Building2,
-        title: "Innovation",
-        description: "Repousser les limites avec des solutions de design d'avant-garde et des pratiques de construction durables.",
+        title: "Tarification Honnête",
+        description: "Une tarification forfaitaire transparente et compétitive pour tous nos services d'études et de suivi.",
     },
     {
         icon: Users,
-        title: "Collaboration",
-        description: "Travailler étroitement avec les clients, les communautés et les partenaires pour donner vie aux visions.",
+        title: "Satisfaction Garantie",
+        description: "100% de satisfaction garantie grâce à notre engagement envers la qualité et le respect des délais.",
     },
     {
         icon: Award,
-        title: "Excellence",
-        description: "Viser les standards les plus élevés dans chaque projet que nous entreprenons.",
+        title: "Large Zone de Service",
+        description: "Nous intervenons sur l'ensemble du territoire marocain, des grandes villes aux régions du sud.",
     },
 ];
 
 const team = [
     {
-        name: "James Harrison",
-        role: "Fondateur & PDG",
+        name: "Mr. Abdelaly Jabbad",
+        role: "Ingénieur Génie Industriel",
+        description: "Diplômé de l'ENSA Agadir, responsable département lots techniques, sécurité incendie et suivi chantiers.",
+        qualifications: [
+            "Étude et suivi lots techniques",
+            "Exécution des installations techniques",
+            "Contrôle technique",
+            "Brevet de Sécurité incendie",
+        ],
         image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
     },
     {
-        name: "Sarah Mitchell",
-        role: "Architecte Principal",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop",
-    },
-    {
-        name: "Michael Chen",
-        role: "Ingénieur Structure",
+        name: "Mr. Mohamed El Hilali",
+        role: "Ingénieur Génie Civil",
+        description: "Diplômé de la FST Marrakech, responsable département structure et suivi chantiers.",
+        qualifications: [
+            "Exécution travaux béton armé",
+            "Étude et suivi béton armé",
+            "Contrôle technique construction",
+            "Technique de construction",
+        ],
         image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop",
-    },
-    {
-        name: "Emily Rodriguez",
-        role: "Designer d'Intérieur",
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop",
     },
 ];
 
 const milestones = [
-    { year: "1998", title: "Fondation de l'Entreprise", description: "JBH Engineering a été créé avec la vision de transformer le design architectural." },
-    { year: "2005", title: "Premier Projet Majeur", description: "Achèvement de l'emblématique Tour Skyline, notre premier bâtiment commercial phare." },
-    { year: "2012", title: "Expansion Internationale", description: "Ouverture de bureaux à Londres et Dubaï, élargissant notre empreinte mondiale." },
-    { year: "2018", title: "Prix de la Durabilité", description: "Reconnu pour avoir été pionnier dans les méthodes de construction écologiques." },
-    { year: "2023", title: "500+ Projets", description: "Atteinte du cap des 500 projets réalisés avec succès dans le monde." },
+    { year: "2010", title: "Création du Bureau d'Études", description: "JBH Engineering a été fondé à Agadir avec une vision claire : devenir un BET performant dans le métier du bâtiment tous corps d'état." },
+    { year: "2014", title: "Expansion Régionale", description: "Extension de nos services aux régions du sud du Maroc : Laâyoune, Dakhla, Smara et Guelmim." },
+    { year: "2018", title: "Projets de Santé", description: "Réalisation de plusieurs cliniques et établissements de santé, consolidant notre expertise dans ce secteur." },
+    { year: "2021", title: "Projets Industriels", description: "Développement de notre expertise dans les projets industriels : usines, entrepôts frigorifiques." },
+    { year: "2024", title: "100+ Projets", description: "Atteinte du cap des 100 projets réalisés avec succès au Maroc." },
 ];
 
 const containerVariants = {
@@ -114,17 +118,17 @@ export default function AboutPage() {
                         </div>
 
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
-                            Notre Histoire
+                            Bureau d'Études Techniques
                         </span>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                            Bâtir des Rêves <br />
+                            Expertise en Génie Civil <br />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">
-                                Depuis 1998
+                                & Lots Techniques
                             </span>
                         </h1>
                         <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl">
-                            Depuis plus de 25 ans, JBH Engineering est à l'avant-garde de l'innovation architecturale,
-                            livrant des designs exceptionnels qui résistent à l'épreuve du temps.
+                            JBH Engineering intervient dans le génie civil et les lots techniques pour devenir
+                            un BET performant dans le métier du bâtiment tous corps d'état.
                         </p>
                     </motion.div>
                 </div>
@@ -204,27 +208,26 @@ export default function AboutPage() {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
-                                Qui Sommes-Nous
+                                Notre Mission
                             </span>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight mb-6">
-                                Créer des Espaces <br />
+                                Études & Suivi <br />
                                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">
-                                    Qui Inspirent
+                                    Techniques
                                 </span>
                             </h2>
                             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                                JBH Engineering est un cabinet d'architecture et d'ingénierie complet dédié à la création
-                                d'espaces innovants, durables et esthétiquement remarquables. Notre équipe pluridisciplinaire
-                                réunit des expertises en architecture, ingénierie structurelle, design d'intérieur et gestion de projet.
+                                JBH Engineering est un bureau d'études techniques spécialisé dans le génie civil et les lots
+                                techniques. Notre mission : fournir des études d'exécution béton armé optimisées et sécurisées,
+                                ainsi que des études d'exécution lots techniques de qualité supérieure.
                             </p>
                             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                                Du concept à la réalisation, nous travaillons en étroite collaboration avec nos clients pour comprendre leur vision
-                                et la transformer en réalité. Notre engagement envers l'excellence nous a valu une reconnaissance
-                                dans l'industrie et la confiance de clients du monde entier.
+                                Nous offrons un support et une assistance technique aux opérateurs du métier, avec un conseil
+                                dans toutes les phases de conception : APS, APD, Projet d'exécution et estimation des investissements.
                             </p>
 
                             <div className="grid grid-cols-2 gap-4 mb-10">
-                                {["Design Durable", "Visualisation 3D", "Gestion de Projet", "Planification Intérieure"].map((item, i) => (
+                                {["Avant Projet Sommaire (APS)", "Avant Projet Détaillé (APD)", "Projet d'Exécution", "Estimation & Investissements"].map((item, i) => (
                                     <div key={i} className="flex items-center gap-3">
                                         <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                                             <CheckCircle className="w-4 h-4" />
@@ -376,27 +379,39 @@ export default function AboutPage() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                        className="grid grid-cols-1 md:grid-cols-2 gap-8"
                     >
                         {team.map((member, index) => (
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                className="group cursor-pointer"
+                                className="group bg-white dark:bg-white/5 rounded-3xl p-6 border border-neutral-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300"
                             >
-                                <div className="relative rounded-3xl overflow-hidden aspect-3/4 mb-6">
-                                    <Image
-                                        src={member.image}
-                                        alt={member.name}
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-linear-to-t from-secondary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="flex flex-col md:flex-row gap-6">
+                                    <div className="relative rounded-2xl overflow-hidden w-full md:w-48 aspect-square shrink-0">
+                                        <Image
+                                            src={member.image}
+                                            alt={member.name}
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                                            {member.name}
+                                        </h3>
+                                        <p className="text-primary font-medium text-sm mb-4">{member.role}</p>
+                                        <p className="text-muted-foreground text-sm mb-4">{member.description}</p>
+                                        <div className="space-y-2">
+                                            {member.qualifications.map((qual, i) => (
+                                                <div key={i} className="flex items-center gap-2 text-sm">
+                                                    <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                                                    <span className="text-muted-foreground">{qual}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                                    {member.name}
-                                </h3>
-                                <p className="text-primary font-medium text-sm">{member.role}</p>
                             </motion.div>
                         ))}
                     </motion.div>

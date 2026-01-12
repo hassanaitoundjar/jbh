@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { HeroSection } from "@/components/sections/HeroSection";
+import { HeroSection2 } from "@/components/sections/HeroSection2";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <HeroSection2 />
       <ServicesSection />
       <PrinciplesSection />
       <StatsSection />
