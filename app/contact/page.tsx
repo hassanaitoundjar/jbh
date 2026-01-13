@@ -35,7 +35,7 @@ const contactInfo = [
 const services = [
     "Securite Incendie",
     "Ingénierie de Structure",
-    "Ingenierie desLots Techniques",
+    "Ingenierie des Lots Techniques",
     "Gestion de Projet",
     "Voirie et Reseaux Divers ",
     "Consulting et Assistance",
@@ -84,6 +84,8 @@ export default function ContactPage() {
             setIsSubmitting(false);
         }
     };
+
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -162,7 +164,7 @@ export default function ContactPage() {
             </section>
 
             {/* Main Contact Section */}
-            <section className="py-24 relative overflow-hidden">
+            <section className="py-24 relative overflow-hidden" id="inputs">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     <img
@@ -172,7 +174,7 @@ export default function ContactPage() {
                     />
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-4 relative z-10" >
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                         {/* Contact Form */}
                         <motion.div
@@ -295,7 +297,7 @@ export default function ContactPage() {
                                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight mb-6">
                                     Ingénierie Experte <br />
                                     <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">
-                                        & Solutions de Design
+                                        & Solutions de Pointe
                                     </span>
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed mb-8">
@@ -348,9 +350,12 @@ export default function ContactPage() {
                                         Planifier une Consultation
                                     </h3>
                                     <p className="text-gray-300 mb-6">
-                                        Réservez une consultation gratuite de 30 minutes avec nos architectes seniors pour discuter des exigences de votre projet.
+                                        Réservez une consultation gratuite de 30 minutes avec nos ingénieurs seniors pour discuter des exigences de votre projet.
                                     </p>
                                     <Button
+                                        onClick={() => {
+                                            document.getElementById("inputs")?.scrollIntoView({ behavior: "smooth" })
+                                        }}
                                         variant="outline"
                                         className="rounded-full px-8 border-white/20 text-black hover:bg-white hover:text-secondary transition-all duration-300"
                                     >

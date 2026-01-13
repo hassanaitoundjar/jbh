@@ -15,10 +15,10 @@ const footerLinks = {
         { name: "Contact", href: "/contact" },
     ],
     services: [
-        { name: "Conception Architecturale", href: "/projects" },
-        { name: "Design d'Intérieur", href: "/projects" },
-        { name: "Urbanisme", href: "/projects" },
-        { name: "Construction Durable", href: "/projects" },
+        { name: "Ingénierie de structure", href: "/projects" },
+        { name: "Ingénierie des lots techniques", href: "/projects" },
+        { name: "Voirie et reseaux divers", href: "/projects" },
+        { name: "Securité incendie", href: "/projects" },
     ],
 };
 
@@ -49,8 +49,7 @@ export function Footer2() {
                             <span className="text-2xl font-bold text-gray-900">{siteConfig.name}</span>
                         </Link>
                         <p className="text-gray-600 mb-8 max-w-sm leading-relaxed">
-                            Créer des solutions architecturales innovantes alliant esthétique,
-                            fonctionnalité et durabilité pour façonner l'avenir de l'habitat.
+                            Acompagner les professionnels dans la réalisation de leurs projets.
                         </p>
 
                         {/* Newsletter */}
