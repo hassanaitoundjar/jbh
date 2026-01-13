@@ -33,7 +33,7 @@ const slides = [
         image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop",
         title: "Ingénierie",
         subtitle: "D'excellence",
-        description: "Construire l'avenir avec précision et durabilité",
+        description: "Spécialisé dans les domaines du bâtiment, de l’industrie et de la gestion de projets.",
     },
 ];
 
@@ -215,14 +215,14 @@ export function HeroSection2() {
                         <h1 className="mb-6 overflow-hidden">
                             <span
                                 ref={titleRef}
-                                className="block text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-white leading-[0.9] tracking-tight"
+                                className="block text-5xl md:text-6xl lg:text-2xl xl:text-8xl font-heading font-bold text-white leading-[0.9] tracking-tight"
                                 style={{ perspective: '1000px' }}
                             >
                                 {slides[currentSlide].title}
                             </span>
                             <span
                                 ref={subtitleRef}
-                                className="block text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold leading-[0.9] tracking-tight mt-2"
+                                className="block text-5xl md:text-6xl lg:text-6xl xl:text-8xl font-heading font-bold leading-[0.9] tracking-tight mt-2"
                             >
                                 <span className="text-primary">
                                     {slides[currentSlide].subtitle}

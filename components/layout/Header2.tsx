@@ -85,7 +85,7 @@ export function Header2() {
                             alt="JBH Engineering"
                             width={300}
                             height={200}
-                            className="h-20 w-auto object-contain"
+                            className="h-16 w-auto object-contain"
                             priority
                         />
                     </Link>

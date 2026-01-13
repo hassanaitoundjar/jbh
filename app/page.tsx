@@ -9,6 +9,7 @@ import FunctionsSection from "@/components/sections/FunctionsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { BlogSection } from "@/components/sections/BlogSection";
+import { CardsSection } from "@/components/sections/CardsSection";
 
 export const metadata: Metadata = {
   title: "JBH ENGINEERING | Bureau d'Architecture & Ingénierie à Agadir, Maroc",
@@ -72,6 +73,7 @@ export default function Home() {
       <HeroSection2 />
       <ServicesSection />
       <PrinciplesSection />
+      <CardsSection />
       <StatsSection />
       <FunctionsSection />
       <ProcessSection />

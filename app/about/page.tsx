@@ -48,7 +48,7 @@ const team = [
             "Contrôle technique",
             "Etudes Sécurité incendie",
         ],
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
+        image: "/images/company/abd.jpeg",
     },
     {
         name: "Mr. Mohamed El Hilali",
@@ -58,7 +58,7 @@ const team = [
             "Étude et suivi béton armé et charpente métallique",
             "Contrôle technique construction",
         ],
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop",
+        image: "/images/company/med.jpeg",
     },
 ];
 
@@ -192,7 +192,7 @@ export default function AboutPage() {
                             >
                                 <Quote className="w-10 h-10 text-white/30 mb-4" />
                                 <p className="text-white font-medium italic mb-4">
-                                    "L'architecture est le jeu savant, correct et magnifique des volumes assemblés sous la lumière."
+                                    "L'ingénierie est le jeu des méthodes et des techniques structurées pour résoudre des problèmes complexes, concevoir des solutions efficaces et optimisées."
                                 </p>
                                 <p className="text-white/60 text-sm">— Le Corbusier</p>
                             </motion.div>
@@ -225,7 +225,7 @@ export default function AboutPage() {
                             </p>
 
                             <div className="grid grid-cols-2 gap-4 mb-10">
-                                {["Avant Projet Sommaire (APS)", "Avant Projet Détaillé (APD)", "Projet d'Exécution", "Estimation & Investissements"].map((item, i) => (
+                                {["CONSEILS ET DEVIS", "CONSTRUCTION EN BÉTON ARMÉ", "CONSTRUCTION MÉTALLIQUE", "CONSTRUCTION EN BOIS", "ELECTRICITÉ (CFO / CFA)", "ASSAINISSEMENT", "VRD (VOIRIES ET RÉSEAUX DIVERS)", "CLIMATISATION / VMC", "SECURITE INCENDIE", "CHAUFFAGE / PLOMBERIE", "TRAITEMENT D'AIR", "FLUIDES MEDICAUX", "TRAITEMENT D'EAU", "SUIVI DES TRAVAUX"].map((item, i) => (
                                     <div key={i} className="flex items-center gap-3">
                                         <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                                             <CheckCircle className="w-4 h-4" />
@@ -386,11 +386,13 @@ export default function AboutPage() {
                                 className="group bg-white dark:bg-white/5 rounded-3xl p-6 border border-neutral-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300"
                             >
                                 <div className="flex flex-col md:flex-row gap-6">
-                                    <div className="relative rounded-2xl overflow-hidden w-full md:w-48 aspect-square shrink-0">
+                                    <div className="relative min-h-[200px] rounded-2xl overflow-hidden w-full md:w-48 aspect-square shrink-0">
                                         <Image
                                             src={member.image}
                                             alt={member.name}
-                                            fill
+                                            width={500}
+                                            height={200}
+
                                             className="object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                     </div>
