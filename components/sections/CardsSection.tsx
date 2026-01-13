@@ -1,51 +1,68 @@
 "use client";
 
-import { Ruler, Building2, Paintbrush, Briefcase, Map, Leaf } from "lucide-react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { Ruler, Building2, Paintbrush, Briefcase, Map, Leaf, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 
 const infoCards = [
     {
         icon: Ruler,
-        title: "Génie Civil",
-        description: "Nos services de construction en béton armé allient robustesse et durabilité pour des projets immobiliers solides et pérennes.",
+        title: "Conseil, diagnostic et expertise",
+        description: "Diagnostic suite incendie, analyse de la résistance mécanique des structures, prélèvement des aciers pour mesure de ductilité...",
+        fullDescription: "Notre service de conseil et diagnostic offre une expertise approfondie pour évaluer la santé de vos structures. Nous réalisons des diagnostics complets suite à des sinistres (incendie, dégâts des eaux), analysons la résistance mécanique des bâtis anciens et récents, et effectuons des prélèverements techniques pour tester la ductilité et la qualité des matériaux. Notre approche garantit la sécurité et la pérennité de vos ouvrages."
     },
     {
         icon: Building2,
-        title: "Génie Thermique et Fluides",
-        description: "Experts en fluides, nous proposons des solutions de climatisation, chauffage et plomberie efficaces, éco-responsables et adaptées à vos besoins.",
+        title: "Assistance à la maîtrise d’ouvrage",
+        description: "Pour piloter vos chantiers dans le Nord ou Île-de-France, notre bureau d’étude vous propose l’assistance maîtrise d’ouvrage...",
+        fullDescription: "Nous accompagnons les maîtres d'ouvrage à chaque étape de leur projet, de la définition des besoins à la réception des travaux. Notre mission inclut la gestion administrative, technique et financière, la coordination des différents intervenants, ainsi que le suivi rigoureux du planning et du budget. Nous sommes votre partenaire de confiance pour sécuriser et optimiser vos projets de construction."
     },
     {
         icon: Paintbrush,
-        title: "Génie Electrique",
-        description: "Notre expertise en conception d'installations électriques courants forts/faibles assure une distribution électrique sûre et une connectivité optimale pour vos bâtiments.",
+        title: "Design et Architecture",
+        description: "Création de plans architecturaux modernes respectant les normes environnementales et esthétiques pour vos projets.",
+        fullDescription: "Notre atelier d'architecture conçoit des espaces innovants et fonctionnels qui allient esthétique contemporaine et respect de l'environnement. Nous élaborons des plans détaillés, des esquisses 3D et des dossiers de permis de construire, en veillant à l'intégration harmonieuse du projet dans son site et à l'utilisation de matériaux durables."
     },
     {
         icon: Briefcase,
-        title: "Infrastructure VRD",
-        description: "Nos projets de VRD intègrent planification, conception et gestion des infrastructures routières et réseaux divers pour des solutions intégrées et fonctionnelles.",
+        title: "Gestion de Projet",
+        description: "Supervision complète de vos travaux, garantissant le respect des délais, du budget et de la qualité d'exécution.",
+        fullDescription: "La réussite d'un chantier repose sur une gestion rigoureuse. Nous assurons la direction de l'exécution des travaux (DET) et l'ordonnancement, le pilotage et la coordination (OPC) de vos chantiers. Nous veillons à la qualité de la mise en œuvre, au respect des délais contractuels et à la maîtrise des coûts, pour une livraison sans surprise."
     },
     {
         icon: Map,
-        title: "Economie de la Construction",
+        title: "Aménagement Urbain",
         description: "Conception d'espaces publics et privés harmonieux, intégrant les enjeux sociaux et environnementaux actuels.",
+        fullDescription: "Nous repensons la ville pour la rendre plus agréable et durable. Nos experts en aménagement urbain conçoivent des espaces publics, des parcs, des places et des lotissements qui favorisent le lien social, la mobilité douce et la biodiversité. Nous intégrons les enjeux climatiques et sociétaux au cœur de nos réflexions urbaines."
     },
     {
         icon: Leaf,
         title: "Éco-conception",
         description: "Solutions durables et innovantes pour minimiser l'impact écologique de vos constructions et rénovations.",
+        fullDescription: "L'éco-conception est au cœur de notre démarche. Nous proposons des solutions techniques innovantes pour réduire l'empreinte carbone de vos bâtiments : choix de matériaux biosourcés, optimisation de la performance énergétique, gestion de l'eau et des déchets. Construire durablement, c'est investir pour l'avenir."
     },
 ];
 
 export function CardsSection() {
+    const [selectedCard, setSelectedCard] = useState<typeof infoCards[0] | null>(null);
+
     return (
-        <section className="py-24  bg-background overflow-hidden relative">
+        <section className="py-24 bg-background overflow-hidden relative">
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/images/principles/2.jpeg"
                     alt="Background"
                     fill
-                    className="object-cover opacity-15"
+                    className="object-cover opacity-20"
                 />
             </div>
             <div className="container mx-auto px-4 relative z-10">
@@ -104,52 +121,121 @@ export function CardsSection() {
                         transition={{ delay: 0.3 }}
                         className="text-muted-foreground text-lg leading-relaxed"
                     >
-                        Une expertise complète pour répondre à tous vos besoins en ingénierie technique.
+                        Une expertise complète pour répondre à tous vos besoins en ingénierie et architecture.
                     </motion.p>
                 </div>
 
-                {/* Feature Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {infoCards.map((card, index) => (
+                {/* Carousel */}
+                <div className="px-8">
+                    <Carousel
+                        opts={{
+                            align: "start",
+                            loop: true,
+                        }}
+                        className="w-full"
+                    >
+                        <CarouselContent className="-ml-4">
+                            {infoCards.map((card, index) => (
+                                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                                    <div className="h-full">
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: 0.1 }}
+                                            className="group h-full bg-white border border-gray-100 p-8 rounded-3xl hover:shadow-lg hover:border-primary/20 transition-all duration-300 flex flex-col"
+                                        >
+                                            <div className="flex flex-col gap-6 items-start grow">
+                                                {/* Icon */}
+                                                <div className="shrink-0 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                                                    <card.icon
+                                                        className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300"
+                                                        strokeWidth={1.5}
+                                                    />
+                                                </div>
+
+                                                <div className="grow">
+                                                    {/* Title */}
+                                                    <h3 className="font-heading text-xl font-bold text-gray-900 mb-3">
+                                                        {card.title}
+                                                    </h3>
+
+                                                    {/* Description */}
+                                                    <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                                                        {card.description}
+                                                    </p>
+                                                </div>
+
+                                                {/* Read More Button */}
+                                                <button
+                                                    onClick={() => setSelectedCard(card)}
+                                                    className="mt-auto text-xs font-bold text-gray-900 tracking-widest hover:text-primary transition-colors duration-300 uppercase relative"
+                                                >
+                                                    En Savoir Plus
+                                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                                                </button>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="hidden md:flex -left-12 opacity-50 hover:opacity-100" />
+                        <CarouselNext className="hidden md:flex -right-12 opacity-50 hover:opacity-100" />
+                    </Carousel>
+                </div>
+            </div>
+
+            {/* Modal */}
+            <AnimatePresence>
+                {selectedCard && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+                        onClick={() => setSelectedCard(null)}
+                    >
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.4 + index * 0.1 }}
-                            className="group bg-white border border-gray-100 p-8 rounded-3xl hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="bg-white rounded-3xl p-8 max-w-2xl w-full relative shadow-2xl overflow-hidden"
                         >
-                            <div className="flex flex-col md:flex-row gap-6 items-start">
-                                {/* Icon */}
-                                <div className="shrink-0 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                                    <card.icon
-                                        className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300"
-                                        strokeWidth={1.5}
-                                    />
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setSelectedCard(null)}
+                                className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors"
+                            >
+                                <X className="w-6 h-6 text-gray-500" />
+                            </button>
+
+                            <div className="flex flex-col md:flex-row gap-8">
+                                <div className="shrink-0">
+                                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <selectedCard.icon className="w-10 h-10 text-primary" strokeWidth={1.5} />
+                                    </div>
                                 </div>
-
                                 <div>
-                                    {/* Title */}
-                                    <h3 className="font-heading text-xl font-bold text-gray-900 mb-3">
-                                        {card.title}
+                                    <h3 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                                        {selectedCard.title}
                                     </h3>
-
-                                    {/* Description */}
-                                    <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                                        {card.description}
+                                    <div className="w-12 h-1 bg-primary rounded-full mb-6"></div>
+                                    <p className="text-gray-600 text-lg leading-relaxed">
+                                        {selectedCard.fullDescription}
                                     </p>
-
-                                    {/* Read More Link */}
-                                    <button className="text-xs font-bold text-gray-900 tracking-widest hover:text-primary transition-colors duration-300 uppercase relative">
-                                        En Savoir Plus
-                                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-                                    </button>
+                                    <div className="mt-8">
+                                        <Button className="rounded-full px-8" onClick={() => setSelectedCard(null)}>
+                                            Fermer
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
-                    ))}
-                </div>
-            </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }
