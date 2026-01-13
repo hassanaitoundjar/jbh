@@ -16,39 +16,48 @@ import { Button } from "@/components/ui/button";
 const infoCards = [
     {
         icon: Ruler,
-        title: "Conseil, diagnostic et expertise",
-        description: "Diagnostic suite incendie, analyse de la résistance mécanique des structures, prélèvement des aciers pour mesure de ductilité...",
-        fullDescription: "Notre service de conseil et diagnostic offre une expertise approfondie pour évaluer la santé de vos structures. Nous réalisons des diagnostics complets suite à des sinistres (incendie, dégâts des eaux), analysons la résistance mécanique des bâtis anciens et récents, et effectuons des prélèverements techniques pour tester la ductilité et la qualité des matériaux. Notre approche garantit la sécurité et la pérennité de vos ouvrages."
+        title: "Génie Civil",
+        description: "Nos services de construction en béton armé allient robustesse et durabilité pour des projets immobiliers solides et pérennes.",
     },
     {
         icon: Building2,
-        title: "Assistance à la maîtrise d’ouvrage",
-        description: "Pour piloter vos chantiers dans le Nord ou Île-de-France, notre bureau d’étude vous propose l’assistance maîtrise d’ouvrage...",
-        fullDescription: "Nous accompagnons les maîtres d'ouvrage à chaque étape de leur projet, de la définition des besoins à la réception des travaux. Notre mission inclut la gestion administrative, technique et financière, la coordination des différents intervenants, ainsi que le suivi rigoureux du planning et du budget. Nous sommes votre partenaire de confiance pour sécuriser et optimiser vos projets de construction."
+        title: "Génie Thermique et Fluides",
+        description: "Experts en fluides, nous proposons des solutions de climatisation, chauffage et plomberie efficaces, éco-responsables et adaptées à vos besoins.",
     },
     {
         icon: Paintbrush,
-        title: "Design et Architecture",
-        description: "Création de plans architecturaux modernes respectant les normes environnementales et esthétiques pour vos projets.",
-        fullDescription: "Notre atelier d'architecture conçoit des espaces innovants et fonctionnels qui allient esthétique contemporaine et respect de l'environnement. Nous élaborons des plans détaillés, des esquisses 3D et des dossiers de permis de construire, en veillant à l'intégration harmonieuse du projet dans son site et à l'utilisation de matériaux durables."
+        title: "Génie Electrique",
+        description: "Notre expertise en conception d'installations électriques courants forts/faibles assure une distribution électrique sûre et une connectivité optimale pour vos bâtiments.",
     },
     {
         icon: Briefcase,
-        title: "Gestion de Projet",
-        description: "Supervision complète de vos travaux, garantissant le respect des délais, du budget et de la qualité d'exécution.",
-        fullDescription: "La réussite d'un chantier repose sur une gestion rigoureuse. Nous assurons la direction de l'exécution des travaux (DET) et l'ordonnancement, le pilotage et la coordination (OPC) de vos chantiers. Nous veillons à la qualité de la mise en œuvre, au respect des délais contractuels et à la maîtrise des coûts, pour une livraison sans surprise."
+        title: "Infrastructure VRD",
+        description: "Nos projets de VRD intègrent planification, conception et gestion des infrastructures routières et réseaux divers pour des solutions intégrées et fonctionnelles.",
     },
     {
         icon: Map,
-        title: "Aménagement Urbain",
-        description: "Conception d'espaces publics et privés harmonieux, intégrant les enjeux sociaux et environnementaux actuels.",
-        fullDescription: "Nous repensons la ville pour la rendre plus agréable et durable. Nos experts en aménagement urbain conçoivent des espaces publics, des parcs, des places et des lotissements qui favorisent le lien social, la mobilité douce et la biodiversité. Nous intégrons les enjeux climatiques et sociétaux au cœur de nos réflexions urbaines."
+        title: "Economie de la Construction",
+        description: "Gestion des coûts. Estimation tous corps d’état. Prescriptions techniques tous corps d’état.Audit de constructions existantes",
     },
     {
         icon: Leaf,
-        title: "Éco-conception",
-        description: "Solutions durables et innovantes pour minimiser l'impact écologique de vos constructions et rénovations.",
-        fullDescription: "L'éco-conception est au cœur de notre démarche. Nous proposons des solutions techniques innovantes pour réduire l'empreinte carbone de vos bâtiments : choix de matériaux biosourcés, optimisation de la performance énergétique, gestion de l'eau et des déchets. Construire durablement, c'est investir pour l'avenir."
+        title: "Direction de Travaux",
+        description: "Ordonnancement, pilotage de chantier. Coordination des travaux Assistance maîtrise d’ouvrage et maitrise d’ouvrage déléguée (AMO MOD).",
+    },
+    {
+        icon: Leaf,
+        title: "Ouvrages d'art et Routes",
+        description: "Ouvrages d’art.Routes. Pont, Dalot. Murs de soutènement.",
+    },
+    {
+        icon: Leaf,
+        title: "Notice de sécurité incendie",
+        description: "Les établissements recevant du public (ERP)Les bâtiments d’habitation (BH) Les immeubles de grande hauteur (IGH) Les lieux de travail (ERT)",
+    },
+    {
+        icon: Leaf,
+        title: "Impact sur Environnement (EIE)",
+        description: "Analyse préalable pour évaluer les effets potentiels d'un projet (construction, industrie) sur l'environnement (air, eau, faune, flore, humain) pour identifier, prévenir ou compenser les impacts négatifs et renforcer les positifs.",
     },
 ];
 
@@ -223,7 +232,7 @@ export function CardsSection() {
                                     </h3>
                                     <div className="w-12 h-1 bg-primary rounded-full mb-6"></div>
                                     <p className="text-gray-600 text-lg leading-relaxed">
-                                        {selectedCard.fullDescription}
+                                        {selectedCard.description}
                                     </p>
                                     <div className="mt-8">
                                         <Button className="rounded-full px-8" onClick={() => setSelectedCard(null)}>
