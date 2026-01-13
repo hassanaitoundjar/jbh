@@ -1,6 +1,34 @@
 // Site configuration - Update these values to change contact info across the entire website
 
 export const siteConfig = {
+
+    ///team
+
+    team: [
+        {
+            name: "Mr. Abdelaly Jabbad",
+            role: "Ingénieur d'État en lots techniques, breveté en Sécurité incendie",
+            description: "Responsable département lots techniques, sécurité incendie.",
+            qualifications: [
+                "Étude et suivi lots techniques",
+                "Supervision des installations techniques",
+                "Contrôle technique",
+                "Etudes Sécurité incendie",
+            ],
+            image: "/images/company/abd.jpeg",
+        },
+        {
+            name: "Mr. Mohamed El Hilali",
+            role: "Ingénieur d'État en génie civil",
+            description: "Responsable département structure ",
+            qualifications: [
+                "Étude et suivi béton armé et charpente métallique",
+                "Contrôle technique construction",
+            ],
+            image: "/images/company/med.jpeg",
+        },
+    ],
+
     // Company Info
     name: "JBH ENGINEERING",
     tagline: "Bureau d'Études Techniques",

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Award, Users, Building2, Target, CheckCircle, ArrowRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 
 
 const stats = [
@@ -37,30 +38,7 @@ const values = [
     },
 ];
 
-const team = [
-    {
-        name: "Mr. Abdelaly Jabbad",
-        role: "Ingénieur d'État en lots techniques, breveté en Sécurité incendie",
-        description: "Responsable département lots techniques, sécurité incendie.",
-        qualifications: [
-            "Étude et suivi lots techniques",
-            "Supervision des installations techniques",
-            "Contrôle technique",
-            "Etudes Sécurité incendie",
-        ],
-        image: "/images/company/abd.jpeg",
-    },
-    {
-        name: "Mr. Mohamed El Hilali",
-        role: "Ingénieur d'État en génie civil",
-        description: "Responsable département structure ",
-        qualifications: [
-            "Étude et suivi béton armé et charpente métallique",
-            "Contrôle technique construction",
-        ],
-        image: "/images/company/med.jpeg",
-    },
-];
+
 
 const milestones = [
     { year: "2018", title: "Création du Bureau d'Études", description: "JBH Engineering a été fondé à Agadir avec une vision claire : devenir un BET performant dans le métier du bâtiment tous corps d'état." },
@@ -379,7 +357,7 @@ export default function AboutPage() {
                         viewport={{ once: true }}
                         className="grid grid-cols-1 md:grid-cols-2 gap-8"
                     >
-                        {team.map((member, index) => (
+                        {siteConfig.team.map((member, index) => (
                             <motion.div
                                 key={index}
                                 variants={itemVariants}

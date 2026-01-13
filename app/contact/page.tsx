@@ -40,6 +40,7 @@ const services = [
     "Voirie et Reseaux Divers ",
     "Consulting et Assistance",
     "Expertise Technique",
+
 ];
 
 export default function ContactPage() {
@@ -52,23 +53,19 @@ export default function ContactPage() {
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [error, setError] = useState("");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setError("");
 
         try {
-            const response = await fetch("/api/contact", {
+            const response = await fetch("https://formspree.io/f/xwvveagk", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             });
-
-            const data = await response.json();
 
             if (response.ok) {
                 setIsSubmitted(true);
@@ -80,16 +77,15 @@ export default function ContactPage() {
                     message: "",
                 });
                 setTimeout(() => setIsSubmitted(false), 5000);
-            } else {
-                setError(data.error || "Une erreur s'est produite. Veuillez réessayer.");
             }
         } catch (error) {
             console.error("Error submitting form:", error);
-            setError("Impossible d'envoyer le message. Vérifiez votre connexion.");
         } finally {
             setIsSubmitting(false);
         }
     };
+
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -99,15 +95,17 @@ export default function ContactPage() {
         <main className="min-h-screen bg-background">
             {/* Hero Section */}
             <section className="relative py-32 bg-secondary overflow-hidden">
+                {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-secondary/95 z-10" />
                     <img
                         src="/bg/bg.jpeg"
-                        alt="Blueprint Background"
+                        alt="Blueprint detailsBackground"
                         className="w-full h-full object-cover opacity-20 invert mix-blend-overlay"
                     />
-                </div>
+                </div>contactInfo
 
+                {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
 
@@ -121,7 +119,7 @@ export default function ContactPage() {
                         <div className="flex items-center gap-2 mb-6">
                             <Link href="/" className="text-gray-400 hover:text-primary transition-colors">Accueil</Link>
                             <span className="text-gray-600">/</span>
-                            <span className="text-white">Contact</span>
+                            <span className="text-white">Contact</span>contactInfo
                         </div>
 
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
@@ -167,6 +165,7 @@ export default function ContactPage() {
 
             {/* Main Contact Section */}
             <section className="py-24 relative overflow-hidden" id="inputs">
+                {/* Background Pattern */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     <img
                         src="/bg/bg.jpeg"
@@ -175,7 +174,7 @@ export default function ContactPage() {
                     />
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-4 relative z-10" >
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                         {/* Contact Form */}
                         <motion.div
@@ -206,12 +205,6 @@ export default function ContactPage() {
                                 </motion.div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">
-                                    {error && (
-                                        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-xl">
-                                            {error}
-                                        </div>
-                                    )}
-
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label className="block text-sm font-medium text-foreground mb-2">Nom Complet</label>
