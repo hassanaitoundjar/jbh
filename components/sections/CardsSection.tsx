@@ -100,7 +100,7 @@ export function CardsSection() {
                                     animate={{ pathLength: 1, opacity: 1 }}
                                     transition={{
                                         duration: 2,
-                                        repeat: Infinity,
+                                        repeat: 2,
                                         repeatType: "reverse",
                                         ease: "easeInOut"
                                     }}

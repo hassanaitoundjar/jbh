@@ -6,57 +6,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, MapPin, MoveRight } from 'lucide-r
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-const projects = [
-    {
-        id: 1,
-        title: "Clinique Ibn Rochd",
-        category: "Santé",
-        location: "Tiznit, Maroc",
-        description: "Construction d'une clinique moderne offrant des services de santé de qualité à la région de Tiznit.",
-        image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=800&auto=format&fit=crop",
-    },
-    {
-        id: 2,
-        title: "CMC (OFPPT)",
-        category: "Éducation",
-        location: "Laâyoune, Maroc",
-        description: "Centre de formation professionnelle équipé des dernières technologies pour la formation des jeunes.",
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop",
-    },
-    {
-        id: 3,
-        title: "Dania Land Parc",
-        category: "Infrastructure",
-        location: "Agadir, Maroc",
-        description: "Parc de loisirs et d'attractions offrant des espaces de détente pour toute la famille.",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop",
-    },
-    {
-        id: 9,
-        title: "Clinique & Annexes Hospitalier",
-        category: "Santé",
-        location: "Fès, Maroc",
-        description: "Complexe hospitalier moderne avec plusieurs annexes spécialisées et équipements de dernière génération.",
-        image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800&auto=format&fit=crop",
-    },
-    {
-        id: 5,
-        title: "École Al-Hanane Privée",
-        category: "Éducation",
-        location: "Inzegane, Maroc",
-        description: "Établissement scolaire privé avec des infrastructures pédagogiques modernes et des espaces sportifs.",
-        image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop",
-    },
-    {
-        id: 10,
-        title: "Usine Parapharmaceutique",
-        category: "Industriel",
-        location: "Agadir, Maroc",
-        description: "Usine de production pharmaceutique répondant aux normes internationales de fabrication.",
-        image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800&auto=format&fit=crop",
-    },
-];
+import { projects } from '@/data/projects/projects';
 
 export default function FunctionsSection() {
     const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: true });

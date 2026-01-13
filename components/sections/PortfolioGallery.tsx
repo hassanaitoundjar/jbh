@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { projects, categories } from '@/data/projects/projects';
 
 export default function PortfolioGallery() {
     const [activeFilter, setActiveFilter] = useState('Tous');
@@ -23,58 +24,6 @@ export default function PortfolioGallery() {
         return () => clearInterval(interval);
     }, [scrollingTexts.length]);
 
-    const categories = [
-        'Tous',
-        'Santé',
-        'Éducation',
-        'Industriel',
-        'Infrastructure',
-    ];
-
-    const projects = [
-        {
-            id: 1,
-            image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=600&fit=crop',
-            title: 'Clinique Ibn Rochd',
-            category: 'Santé',
-            size: 'large'
-        },
-        {
-            id: 2,
-            image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=600&fit=crop',
-            title: 'CMC (OFPPT)',
-            category: 'Éducation',
-            size: 'small'
-        },
-        {
-            id: 5,
-            image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop',
-            title: 'École Al-Hanane Privée',
-            category: 'Éducation',
-            size: 'small'
-        },
-        {
-            id: 7,
-            image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
-            title: 'Dania Land Parc',
-            category: 'Infrastructure',
-            size: 'wide'
-        },
-        {
-            id: 10,
-            image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=600&fit=crop',
-            title: 'Usine Parapharmaceutique',
-            category: 'Industriel',
-            size: 'small'
-        },
-        {
-            id: 9,
-            image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&h=600&fit=crop',
-            title: 'Clinique & Annexes Hospitalier',
-            category: 'Santé',
-            size: 'small'
-        },
-    ];
 
     const filteredProjects = activeFilter === 'Tous'
         ? projects
@@ -189,9 +138,12 @@ export default function PortfolioGallery() {
                                                 <p className="text-primary text-sm font-medium mb-1 tracking-wider uppercase">{project.category}</p>
                                                 <h3 className="text-white text-2xl font-bold font-heading">{project.title}</h3>
                                             </div>
-                                            <div className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-black transition-colors">
-                                                <ArrowUpRight size={20} />
-                                            </div>
+                                            <Link href={`/projects/${project.id}`}>
+                                                <div className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-black transition-colors">
+                                                    <ArrowUpRight className="group-hover:text-primary" size={20}
+                                                    />
+                                                </div>
+                                            </Link>
                                         </div>
                                     </div>
                                 </motion.div>
