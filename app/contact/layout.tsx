@@ -1,24 +1,24 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact | JBH ENGINEERING - Démarrez Votre Projet",
-    description: "Contactez JBH ENGINEERING pour vos projets d'architecture et de construction à Agadir, Maroc. Consultation gratuite, devis personnalisé. Appelez-nous au +212-628-096-812.",
+    title: "Contact | JBH ENGINEERING - Démarrez Votre Projet d'Ingénierie",
+    description: "Contactez JBH ENGINEERING pour vos projets d'ingénierie de structure, lots techniques et VRD à Agadir, Maroc. Consultation gratuite, devis personnalisé. Appelez-nous au +212 661 85 85 81.",
     keywords: [
-        "contact architecte Agadir",
-        "devis architecture Maroc",
-        "consultation architecte gratuite",
-        "bureau études Agadir",
-        "ingénieur bâtiment contact",
-        "architecte projet Maroc",
+        "contact bureau études Agadir",
+        "devis ingénierie Maroc",
+        "consultation ingénieur gratuite",
+        "bureau études techniques Agadir",
+        "ingénieur structure contact",
+        "projet ingénierie Maroc",
         "JBH Engineering contact",
-        "demande devis construction"
+        "demande devis études techniques"
     ],
     openGraph: {
-        title: "Contactez-Nous | JBH ENGINEERING",
-        description: "Démarrez votre projet architectural. Consultation gratuite et devis personnalisé à Agadir, Maroc.",
+        title: "Contactez-Nous | JBH ENGINEERING - Bureau d'Études Techniques",
+        description: "Démarrez votre projet d'ingénierie. Consultation gratuite et devis personnalisé à Agadir, Maroc.",
         type: "website",
         locale: "fr_MA",
-        url: "https://jbhengineering.ma/contact",
+        url: "https://jbh.ma/contact",
         siteName: "JBH ENGINEERING",
         images: [
             {
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Contact | JBH ENGINEERING",
-        description: "Contactez-nous pour une consultation gratuite. +212-628-096-812 | Agadir, Maroc",
+        description: "Contactez-nous pour une consultation gratuite. +212 661 85 85 81 | Agadir, Maroc",
         images: ["/images/og/contact-og.jpg"]
     },
     alternates: {
-        canonical: "https://jbhengineering.ma/contact"
+        canonical: "https://jbh.ma/contact"
     },
     other: {
         "geo.region": "MA-AGD",

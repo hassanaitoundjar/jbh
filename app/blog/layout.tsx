@@ -1,24 +1,24 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Blog | JBH ENGINEERING - Actualités Architecture & Design",
-    description: "Suivez les dernières tendances en architecture, construction durable et design d'intérieur. Articles d'experts, conseils et innovations du secteur.",
+    title: "Blog | JBH ENGINEERING - Actualités Ingénierie & Construction",
+    description: "Suivez les dernières tendances en ingénierie de structure, lots techniques, VRD et sécurité incendie. Articles d'experts, conseils techniques et innovations du secteur.",
     keywords: [
-        "blog architecture Maroc",
-        "actualités construction",
-        "tendances design intérieur",
-        "architecture durable",
-        "innovation bâtiment",
-        "conseils architecte",
-        "articles architecture",
-        "durabilité construction"
+        "blog ingénierie Maroc",
+        "actualités construction technique",
+        "tendances ingénierie structure",
+        "lots techniques innovation",
+        "VRD actualités",
+        "conseils ingénieur",
+        "articles ingénierie bâtiment",
+        "sécurité incendie normes"
     ],
     openGraph: {
-        title: "Blog Architecture | JBH ENGINEERING",
-        description: "Articles et conseils d'experts sur l'architecture, la construction durable et le design d'intérieur.",
+        title: "Blog Ingénierie | JBH ENGINEERING",
+        description: "Articles et conseils d'experts sur l'ingénierie de structure, les lots techniques et la construction.",
         type: "website",
         locale: "fr_MA",
-        url: "https://jbhengineering.ma/blog",
+        url: "https://jbh.ma/blog",
         siteName: "JBH ENGINEERING",
         images: [
             {
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Blog | JBH ENGINEERING",
-        description: "Articles et tendances en architecture, construction et design d'intérieur.",
+        description: "Articles et tendances en ingénierie, construction technique et lots techniques.",
         images: ["/images/og/blog-og.jpg"]
     },
     alternates: {
-        canonical: "https://jbhengineering.ma/blog"
+        canonical: "https://jbh.ma/blog"
     }
 };
 

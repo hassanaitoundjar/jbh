@@ -23,23 +23,30 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jbhengineering.ma"),
+  metadataBase: new URL("https://jbh.ma"),
   title: {
-    default: "JBH ENGINEERING | Bureau d'Architecture à Agadir, Maroc",
+    default: "JBH ENGINEERING | Bureau d'Études Techniques - Ingénierie à Agadir, Maroc",
     template: "%s | JBH ENGINEERING"
   },
-  description: "JBH ENGINEERING est un studio d'architecture de premier plan à Agadir, Maroc. Conception architecturale innovante, design d'intérieur et construction durable. 25+ ans d'expérience, 500+ projets réalisés.",
+  description: "JBH ENGINEERING - Bureau d'études techniques de référence à Agadir, Maroc. Spécialisé en ingénierie de structure (béton armé, charpente métallique), lots techniques (CVC, plomberie, électricité), VRD et sécurité incendie. Plus de 500 projets réalisés avec expertise et innovation.",
   keywords: [
-    "architecte Agadir",
-    "bureau architecture Maroc",
-    "JBH Engineering",
-    "conception architecturale",
-    "design intérieur",
-    "construction durable",
-    "ingénierie bâtiment",
-    "urbanisme Maroc"
+    "bureau études techniques Agadir",
+    "ingénierie structure Maroc",
+    "JBH Engineering Agadir",
+    "lots techniques bâtiment",
+    "VRD voirie réseaux divers",
+    "sécurité incendie Maroc",
+    "béton armé charpente métallique",
+    "CVC plomberie électricité",
+    "contrôle technique Agadir",
+    "bureau ingénierie Maroc",
+    "étude structure bâtiment",
+    "installation technique Agadir",
+    "ingénieur génie civil Maroc",
+    "bureau études Agadir",
+    "conception structure Maroc"
   ],
-  authors: [{ name: "JBH ENGINEERING", url: "https://jbhengineering.ma" }],
+  authors: [{ name: "JBH ENGINEERING", url: "https://jbh.ma" }],
   creator: "JBH ENGINEERING",
   publisher: "JBH ENGINEERING",
   formatDetection: {
@@ -56,8 +63,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_MA",
     siteName: "JBH ENGINEERING",
-    title: "JBH ENGINEERING | Architecture & Design Visionnaire",
-    description: "Studio d'architecture de premier plan à Agadir, Maroc. Conception innovante et construction durable.",
+    title: "JBH ENGINEERING | Bureau d'Études Techniques - Ingénierie Agadir",
+    description: "Bureau d'études techniques expert à Agadir. Ingénierie structure, lots techniques, VRD, sécurité incendie. 500+ projets réalisés au Maroc.",
     images: [
       {
         url: "/images/og/home-og.jpg",

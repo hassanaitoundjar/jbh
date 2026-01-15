@@ -50,22 +50,60 @@ export default function ContactPage() {
         phone: "",
         service: "",
         message: "",
+        website: "", // Honeypot field
+        timestamp: Date.now().toString(), // Anti-bot timestamp
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
+
+    // Client-side validation
+    const validateForm = () => {
+        const errors: Record<string, string> = {};
+
+        if (!formData.name || formData.name.trim().length < 2) {
+            errors.name = "Le nom doit contenir au moins 2 caractères";
+        }
+
+        if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            errors.email = "Veuillez entrer un email valide";
+        }
+
+        if (formData.phone && !/^[\d\s+()-]{8,20}$/.test(formData.phone)) {
+            errors.phone = "Format de téléphone invalide";
+        }
+
+        if (!formData.message || formData.message.trim().length < 10) {
+            errors.message = "Le message doit contenir au moins 10 caractères";
+        }
+
+        setValidationErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setError(null);
+        setValidationErrors({});
+
+        // Client-side validation
+        if (!validateForm()) {
+            return;
+        }
+
         setIsSubmitting(true);
 
         try {
-            const response = await fetch("https://formspree.io/f/xwvveagk", {
+            const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             });
+
+            const data = await response.json();
 
             if (response.ok) {
                 setIsSubmitted(true);
@@ -75,20 +113,36 @@ export default function ContactPage() {
                     phone: "",
                     service: "",
                     message: "",
+                    website: "",
+                    timestamp: Date.now().toString(),
                 });
                 setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                setError(data.error || "Une erreur est survenue. Veuillez réessayer.");
+                if (data.details) {
+                    console.error("Validation errors:", data.details);
+                }
             }
         } catch (error) {
             console.error("Error submitting form:", error);
+            setError("Erreur de connexion. Veuillez vérifier votre connexion internet.");
         } finally {
             setIsSubmitting(false);
         }
     };
 
-
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+
+        // Clear validation error for this field
+        if (validationErrors[name]) {
+            setValidationErrors(prev => {
+                const newErrors = { ...prev };
+                delete newErrors[name];
+                return newErrors;
+            });
+        }
     };
 
     return (
@@ -205,29 +259,59 @@ export default function ContactPage() {
                                 </motion.div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">
+                                    {/* Security: Honeypot field (hidden from users, visible to bots) */}
+                                    <input
+                                        type="text"
+                                        name="website"
+                                        value={formData.website}
+                                        onChange={handleChange}
+                                        style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                        aria-hidden="true"
+                                    />
+
+                                    {/* Error Display */}
+                                    {error && (
+                                        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 flex items-start gap-3">
+                                            <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-white text-xs flex-shrink-0 mt-0.5">!</div>
+                                            <p className="text-red-700 dark:text-red-300 text-sm">{error}</p>
+                                        </div>
+                                    )}
+
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
-                                            <label className="block text-sm font-medium text-foreground mb-2">Nom Complet</label>
+                                            <label className="block text-sm font-medium text-foreground mb-2">
+                                                Nom Complet <span className="text-red-500">*</span>
+                                            </label>
                                             <Input
                                                 name="name"
                                                 value={formData.name}
                                                 onChange={handleChange}
                                                 placeholder="Nom Complet"
-                                                className="h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary"
+                                                className={`h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary ${validationErrors.name ? 'border-red-500' : ''}`}
                                                 required
                                             />
+                                            {validationErrors.name && (
+                                                <p className="text-red-500 text-xs mt-1">{validationErrors.name}</p>
+                                            )}
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium text-foreground mb-2">Adresse Email</label>
+                                            <label className="block text-sm font-medium text-foreground mb-2">
+                                                Adresse Email <span className="text-red-500">*</span>
+                                            </label>
                                             <Input
                                                 name="email"
                                                 type="email"
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 placeholder="nom@example.com"
-                                                className="h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary"
+                                                className={`h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary ${validationErrors.email ? 'border-red-500' : ''}`}
                                                 required
                                             />
+                                            {validationErrors.email && (
+                                                <p className="text-red-500 text-xs mt-1">{validationErrors.email}</p>
+                                            )}
                                         </div>
                                     </div>
 
@@ -239,8 +323,11 @@ export default function ContactPage() {
                                                 value={formData.phone}
                                                 onChange={handleChange}
                                                 placeholder="+212 6 55 55 55 55"
-                                                className="h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary"
+                                                className={`h-14 rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary ${validationErrors.phone ? 'border-red-500' : ''}`}
                                             />
+                                            {validationErrors.phone && (
+                                                <p className="text-red-500 text-xs mt-1">{validationErrors.phone}</p>
+                                            )}
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-foreground mb-2">Service Requis</label>
@@ -259,15 +346,23 @@ export default function ContactPage() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-foreground mb-2">Détails du Projet</label>
+                                        <label className="block text-sm font-medium text-foreground mb-2">
+                                            Détails du Projet <span className="text-red-500">*</span>
+                                        </label>
                                         <Textarea
                                             name="message"
                                             value={formData.message}
                                             onChange={handleChange}
                                             placeholder="Parlez-nous de votre projet..."
-                                            className="min-h-[150px] rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary resize-none"
+                                            className={`min-h-[150px] rounded-xl border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 focus:border-primary resize-none ${validationErrors.message ? 'border-red-500' : ''}`}
                                             required
                                         />
+                                        {validationErrors.message && (
+                                            <p className="text-red-500 text-xs mt-1">{validationErrors.message}</p>
+                                        )}
+                                        <p className="text-xs text-muted-foreground mt-1">
+                                            {formData.message.length}/5000 caractères
+                                        </p>
                                     </div>
 
                                     <Button
@@ -275,10 +370,19 @@ export default function ContactPage() {
                                         disabled={isSubmitting}
                                         className="w-full h-14 rounded-xl font-bold tracking-wide shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
-                                        {isSubmitting ? "Envoi en cours..." : (
+                                        {isSubmitting ? (
+                                            <>
+                                                <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></span>
+                                                Envoi en cours...
+                                            </>
+                                        ) : (
                                             <>Envoyer le Message <Send className="w-4 h-4 ml-2" /></>
                                         )}
                                     </Button>
+
+                                    <p className="text-xs text-muted-foreground text-center">
+                                        🔒 Vos informations sont protégées et ne seront jamais partagées
+                                    </p>
                                 </form>
                             )}
                         </motion.div>

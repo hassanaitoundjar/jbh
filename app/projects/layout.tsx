@@ -1,24 +1,24 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Projets | JBH ENGINEERING - Portfolio Architecture & Construction",
-    description: "Explorez notre portfolio de projets architecturaux : tours commerciales, résidences de luxe, complexes industriels et designs d'intérieur. Plus de 500 projets réalisés au Maroc.",
+    title: "Projets | JBH ENGINEERING - Portfolio Ingénierie Structure, Lots Techniques & VRD",
+    description: "Explorez notre portfolio de projets d'ingénierie : études de structure, lots techniques (CVC, plomberie, électricité), VRD et sécurité incendie. Plus de 100 projets réalisés au Maroc dans les secteurs résidentiel, commercial, industriel et santé.",
     keywords: [
-        "projets architecture Maroc",
-        "portfolio architecture Agadir",
-        "tours commerciales Maroc",
-        "résidences luxe architecte",
-        "construction industrielle",
-        "design intérieur Maroc",
-        "urbanisme Agadir",
-        "réalisations architecturales"
+        "projets ingénierie Maroc",
+        "portfolio bureau études Agadir",
+        "études structure béton armé",
+        "projets lots techniques",
+        "VRD voirie réseaux",
+        "sécurité incendie projets",
+        "ingénierie industrielle Maroc",
+        "réalisations techniques Agadir"
     ],
     openGraph: {
-        title: "Nos Projets | JBH ENGINEERING - Architecture d'Excellence",
-        description: "Découvrez nos réalisations architecturales : projets commerciaux, résidentiels et industriels au Maroc et à l'international.",
+        title: "Nos Projets | JBH ENGINEERING - Ingénierie d'Excellence",
+        description: "Découvrez nos réalisations en ingénierie : projets de structure, lots techniques, VRD et sécurité incendie au Maroc.",
         type: "website",
         locale: "fr_MA",
-        url: "https://jbhengineering.ma/projects",
+        url: "https://jbh.ma/projects",
         siteName: "JBH ENGINEERING",
         images: [
             {
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Projets | JBH ENGINEERING",
-        description: "Portfolio de 500+ projets architecturaux : commercial, résidentiel, industriel.",
+        description: "Portfolio de 100+ projets d'ingénierie : structure, lots techniques, VRD, sécurité incendie.",
         images: ["/images/og/projects-og.jpg"]
     },
     alternates: {
-        canonical: "https://jbhengineering.ma/projects"
+        canonical: "https://jbh.ma/projects"
     }
 };
 

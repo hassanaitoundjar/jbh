@@ -1,23 +1,24 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "À Propos | JBH ENGINEERING - Notre Histoire et Vision",
-    description: "Découvrez JBH ENGINEERING, un studio d'architecture de premier plan avec plus de 25 ans d'expérience. Notre équipe de 50+ experts a réalisé 500+ projets primés au Maroc et à l'international.",
+    title: "À Propos | JBH ENGINEERING - Bureau d'Études Techniques Expert à Agadir",
+    description: "Découvrez JBH ENGINEERING, bureau d'études techniques de référence à Agadir. Spécialisé en ingénierie de structure, lots techniques, VRD et sécurité incendie. Plus de 15 ans d'expérience et 100+ projets réalisés au Maroc.",
     keywords: [
-        "bureau d'architecture Agadir",
-        "architecte Maroc",
-        "JBH Engineering histoire",
-        "équipe architectes expert",
-        "conception architecturale Maroc",
-        "studio architecture innovant",
-        "ingénierie bâtiment Agadir"
+        "bureau études techniques Agadir",
+        "ingénierie structure Maroc",
+        "JBH Engineering à propos",
+        "équipe ingénieurs experts",
+        "lots techniques Agadir",
+        "VRD Maroc",
+        "sécurité incendie expertise",
+        "bureau ingénierie Agadir histoire"
     ],
     openGraph: {
-        title: "À Propos de JBH ENGINEERING | Architecture & Design Visionnaire",
-        description: "Plus de 25 ans d'excellence en architecture. Découvrez notre équipe passionnée et notre approche innovante du design.",
+        title: "À Propos de JBH ENGINEERING | Bureau d'Études Techniques Agadir",
+        description: "Plus de 15 ans d'excellence en ingénierie. Découvrez notre équipe d'ingénieurs experts et notre approche technique innovante.",
         type: "website",
         locale: "fr_MA",
-        url: "https://jbhengineering.ma/about",
+        url: "https://jbh.ma/about",
         siteName: "JBH ENGINEERING",
         images: [
             {
@@ -31,11 +32,11 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "À Propos | JBH ENGINEERING",
-        description: "Découvrez notre équipe d'architectes experts avec 25+ ans d'expérience et 500+ projets réalisés.",
+        description: "Découvrez notre équipe d'ingénieurs experts avec 15+ ans d'expérience et 100+ projets réalisés.",
         images: ["/images/og/about-og.jpg"]
     },
     alternates: {
-        canonical: "https://jbhengineering.ma/about"
+        canonical: "https://jbh.ma/about"
     }
 };
 

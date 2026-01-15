@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { HeroSection2 } from "@/components/sections/HeroSection2";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -10,28 +9,37 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { BlogSection } from "@/components/sections/BlogSection";
 import { CardsSection } from "@/components/sections/CardsSection";
+import { HeroSection } from "@/components/sections/HeroSection";
 
 export const metadata: Metadata = {
-  title: "JBH ENGINEERING | Bureau d'Architecture & Ingénierie à Agadir, Maroc",
-  description: "JBH ENGINEERING est un studio d'architecture de premier plan à Agadir, Maroc. Conception architecturale, design d'intérieur, construction durable. 25+ ans d'expérience, 500+ projets réalisés.",
+  title: "JBH ENGINEERING | Bureau d'Études Techniques - Ingénierie Structure, Lots Techniques & VRD à Agadir",
+  description: "JBH ENGINEERING - Bureau d'études techniques à Agadir, Maroc. Expert en ingénierie de structure, lots techniques (CVC, plomberie, électricité), VRD et sécurité incendie. Plus de 500 projets réalisés avec excellence et innovation.",
   keywords: [
-    "architecte Agadir",
-    "bureau d'architecture Maroc",
+    "bureau études techniques Agadir",
+    "ingénierie structure Maroc",
     "JBH Engineering",
-    "conception architecturale",
-    "design intérieur Agadir",
-    "construction durable Maroc",
-    "ingénierie bâtiment",
-    "urbanisme Agadir",
-    "architecte Maroc",
-    "bureau études techniques"
+    "lots techniques Agadir",
+    "VRD Maroc",
+    "sécurité incendie Agadir",
+    "ingénierie bâtiment Maroc",
+    "bureau études Agadir",
+    "conception structure béton armé",
+    "charpente métallique Maroc",
+    "CVC plomberie électricité",
+    "contrôle technique construction",
+    "étude technique bâtiment",
+    "ingénieur structure Agadir",
+    "voirie réseaux divers",
+    "bureau ingénierie Maroc",
+    "étude béton armé Agadir",
+    "installation technique bâtiment"
   ],
   openGraph: {
-    title: "JBH ENGINEERING | Architecture & Design Visionnaire",
-    description: "Studio d'architecture de premier plan à Agadir. 25+ ans d'expérience, 500+ projets réalisés. Conception innovante et durable.",
+    title: "JBH ENGINEERING | Bureau d'Études Techniques - Ingénierie à Agadir",
+    description: "Expert en ingénierie de structure, lots techniques, VRD et sécurité incendie à Agadir. Plus de 500 projets réalisés. Études béton armé, charpente métallique, installations CVC.",
     type: "website",
     locale: "fr_MA",
-    url: "https://jbhengineering.ma",
+    url: "https://jbh.ma",
     siteName: "JBH ENGINEERING",
     images: [
       {
@@ -44,12 +52,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JBH ENGINEERING | Architecture & Design",
-    description: "Studio d'architecture à Agadir, Maroc. Conception innovante et construction durable.",
+    title: "JBH ENGINEERING | Bureau d'Études Techniques Agadir",
+    description: "Bureau d'études techniques à Agadir. Ingénierie structure, lots techniques, VRD, sécurité incendie. 500+ projets réalisés.",
     images: ["/images/og/home-og.jpg"]
   },
   alternates: {
-    canonical: "https://jbhengineering.ma"
+    canonical: "https://jbh.ma"
   },
   robots: {
     index: true,
@@ -70,7 +78,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <HeroSection2 />
+      <HeroSection />
       <ServicesSection />
       <PrinciplesSection />
       <CardsSection />

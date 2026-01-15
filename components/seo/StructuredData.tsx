@@ -1,22 +1,24 @@
+import { siteConfig } from "@/config/site";
+
 export function StructuredData() {
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "ArchitecturalFirm",
-        "@id": "https://jbhengineering.ma",
-        "name": "JBH ENGINEERING",
+        "@id": "https://jbh.ma",
+        "name": siteConfig.name,
         "alternateName": "JBH Engineering Architecture",
-        "url": "https://jbhengineering.ma",
-        "logo": "https://jbhengineering.ma/images/logo/jbh.png",
-        "image": "https://jbhengineering.ma/images/og/home-og.jpg",
-        "description": "JBH ENGINEERING est un studio d'architecture de premier plan à Agadir, Maroc. Conception architecturale innovante, design d'intérieur et construction durable.",
-        "telephone": "+212-628-096-812",
-        "email": "hassanprof96@gmail.com",
+        "url": "https://jbh.ma",
+        "logo": "https://jbh.ma/images/logo/single-logo.png",
+        "image": "https://jbh.ma/images/og/home-og.jpg",
+        "description": siteConfig.description,
+        "telephone": siteConfig.contact.phone,
+        "email": siteConfig.contact.email,
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Boulevard de l'Innovation, Suite 500",
-            "addressLocality": "Agadir",
-            "postalCode": "80000",
-            "addressCountry": "MA"
+            "streetAddress": siteConfig.address.street,
+            "addressLocality": siteConfig.address.city,
+            "postalCode": siteConfig.address.zip,
+            "addressCountry": siteConfig.address.country
         },
         "geo": {
             "@type": "GeoCoordinates",
@@ -33,8 +35,8 @@ export function StructuredData() {
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "Saturday",
-                "opens": "10:00",
-                "closes": "16:00"
+                "opens": "09:00",
+                "closes": "12:00"
             }
         ],
         "priceRange": "$$",
@@ -49,10 +51,11 @@ export function StructuredData() {
             }
         ],
         "sameAs": [
-            "https://facebook.com/jbhengineering",
-            "https://instagram.com/jbhengineering",
-            "https://twitter.com/jbhengineering",
-            "https://linkedin.com/company/jbhengineering"
+            siteConfig.social.facebook,
+            siteConfig.social.instagram,
+            siteConfig.social.twitter,
+            siteConfig.social.linkedin,
+            siteConfig.social.youtube
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
