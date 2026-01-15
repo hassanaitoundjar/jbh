@@ -60,84 +60,109 @@ export function HeroSection() {
 
     // Initial entrance animation
     useEffect(() => {
+        // Ensure all refs are available before animating
+        if (!containerRef.current || !heroRef.current || !titleRef.current ||
+            !subtitleRef.current || !descRef.current || !ctaRef.current ||
+            !statsRef.current || !scrollIndicatorRef.current) {
+            return;
+        }
+
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
             // Hero container clip animation
-            tl.fromTo(heroRef.current,
-                { clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" },
-                { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", duration: 1.5 }
-            );
+            if (heroRef.current) {
+                tl.fromTo(heroRef.current,
+                    { clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" },
+                    { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", duration: 1.5 }
+                );
+            }
 
             // Overlay reveal
-            tl.fromTo(overlayRef.current,
-                { scaleX: 0 },
-                { scaleX: 1, duration: 1, transformOrigin: "left" },
-                "-=1"
-            );
+            if (overlayRef.current) {
+                tl.fromTo(overlayRef.current,
+                    { scaleX: 0 },
+                    { scaleX: 1, duration: 1, transformOrigin: "left" },
+                    "-=1"
+                );
+            }
 
             // Title animation with split text effect
-            tl.fromTo(titleRef.current,
-                { y: 120, opacity: 0, rotateX: -90 },
-                { y: 0, opacity: 1, rotateX: 0, duration: 1.2 },
-                "-=0.5"
-            );
+            if (titleRef.current) {
+                tl.fromTo(titleRef.current,
+                    { y: 120, opacity: 0, rotateX: -90 },
+                    { y: 0, opacity: 1, rotateX: 0, duration: 1.2 },
+                    "-=0.5"
+                );
+            }
 
             // Subtitle with colored gradient
-            tl.fromTo(subtitleRef.current,
-                { y: 80, opacity: 0, scale: 0.8 },
-                { y: 0, opacity: 1, scale: 1, duration: 1 },
-                "-=0.8"
-            );
+            if (subtitleRef.current) {
+                tl.fromTo(subtitleRef.current,
+                    { y: 80, opacity: 0, scale: 0.8 },
+                    { y: 0, opacity: 1, scale: 1, duration: 1 },
+                    "-=0.8"
+                );
+            }
 
             // Description fade up
-            tl.fromTo(descRef.current,
-                { y: 50, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8 },
-                "-=0.6"
-            );
+            if (descRef.current) {
+                tl.fromTo(descRef.current,
+                    { y: 50, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8 },
+                    "-=0.6"
+                );
+            }
 
             // CTA buttons stagger
-            tl.fromTo(ctaRef.current?.children || [],
-                { y: 40, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.6, stagger: 0.15 },
-                "-=0.4"
-            );
+            if (ctaRef.current?.children && ctaRef.current.children.length > 0) {
+                tl.fromTo(Array.from(ctaRef.current.children),
+                    { y: 40, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.6, stagger: 0.15 },
+                    "-=0.4"
+                );
+            }
 
             // Stats counter animation
-            tl.fromTo(statsRef.current?.children || [],
-                { y: 60, opacity: 0, scale: 0.9 },
-                { y: 0, opacity: 1, scale: 1, duration: 0.8, stagger: 0.1 },
-                "-=0.3"
-            );
+            if (statsRef.current?.children && statsRef.current.children.length > 0) {
+                tl.fromTo(Array.from(statsRef.current.children),
+                    { y: 60, opacity: 0, scale: 0.9 },
+                    { y: 0, opacity: 1, scale: 1, duration: 0.8, stagger: 0.1 },
+                    "-=0.3"
+                );
+            }
 
             // Scroll indicator bounce
-            tl.fromTo(scrollIndicatorRef.current,
-                { y: -20, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.6 },
-                "-=0.2"
-            );
+            if (scrollIndicatorRef.current) {
+                tl.fromTo(scrollIndicatorRef.current,
+                    { y: -20, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.6 },
+                    "-=0.2"
+                );
 
-            // Continuous scroll indicator animation
-            gsap.to(scrollIndicatorRef.current, {
-                y: 10,
-                duration: 1,
-                repeat: -1,
-                yoyo: true,
-                ease: "power1.inOut"
-            });
+                // Continuous scroll indicator animation
+                gsap.to(scrollIndicatorRef.current, {
+                    y: 10,
+                    duration: 1,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "power1.inOut"
+                });
+            }
 
             // Parallax effect on scroll
-            gsap.to(imageRef.current, {
-                yPercent: 30,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true
-                }
-            });
+            if (imageRef.current && containerRef.current) {
+                gsap.to(imageRef.current, {
+                    yPercent: 30,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+            }
 
         }, containerRef);
 
