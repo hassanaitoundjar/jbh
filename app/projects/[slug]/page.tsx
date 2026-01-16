@@ -256,7 +256,7 @@ export default function ProjectDetailPage() {
                 <div className="container mx-auto px-4">
                     <div className="flex justify-between items-center">
                         {prevProject ? (
-                            <Link href={`/projects/${prevProject.id}`} className="group flex items-center gap-4 hover:text-primary transition-colors">
+                            <Link href={`/projects/${prevProject.slug}`} className="group flex items-center gap-4 hover:text-primary transition-colors">
                                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                                 <div>
                                     <span className="text-sm text-muted-foreground">Précédent</span>
@@ -270,7 +270,7 @@ export default function ProjectDetailPage() {
                         </Button>
 
                         {nextProject ? (
-                            <Link href={`/projects/${nextProject.id}`} className="group flex items-center gap-4 text-right hover:text-primary transition-colors">
+                            <Link href={`/projects/${nextProject.slug}`} className="group flex items-center gap-4 text-right hover:text-primary transition-colors">
                                 <div>
                                     <span className="text-sm text-muted-foreground">Suivant</span>
                                     <p className="font-bold">{nextProject.title}</p>

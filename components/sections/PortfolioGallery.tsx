@@ -138,7 +138,7 @@ export default function PortfolioGallery() {
                                                 <p className="text-primary text-sm font-medium mb-1 tracking-wider uppercase">{project.category}</p>
                                                 <h3 className="text-white text-2xl font-bold font-heading">{project.title}</h3>
                                             </div>
-                                            <Link href={`/projects/${project.id}`}>
+                                            <Link href={`/projects/${project.slug}`}>
                                                 <div className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-black transition-colors">
                                                     <ArrowUpRight className="group-hover:text-primary" size={20}
                                                     />
