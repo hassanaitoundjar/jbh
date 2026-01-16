@@ -23,6 +23,7 @@ export default function FunctionsSection() {
         <section className="py-24 w-full mx-auto px-4">
 
             <div className="bg-neutral-900 rounded-[3rem] text-white relative overflow-hidden px-4 md:px-12 py-20">
+
                 <Image
                     src="/bg/bg-arch.jpg"
                     alt="Background Architecture"
@@ -81,7 +82,7 @@ export default function FunctionsSection() {
                                         key={project.id}
                                         className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 pl-6"
                                     >
-                                        <Link href={`/projects/${project.id}`}>
+                                        <Link href={`/projects/${project.slug}`}>
                                             <div className="bg-white rounded-[2rem] overflow-hidden group/card h-full hover:shadow-2xl transition-all duration-500 relative cursor-pointer">
                                                 {/* Image Section */}
                                                 <div className="relative h-64 rounded-[2rem] m-2 overflow-hidden">

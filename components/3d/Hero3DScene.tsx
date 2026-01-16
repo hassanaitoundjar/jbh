@@ -2,10 +2,10 @@
 
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Float, MeshTransmissionMaterial } from '@react-three/drei';
+import { Float, Environment, MeshTransmissionMaterial, Text3D, Center } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Simplified Glass Cube - reduced transmission quality
+// Floating Architectural Cube
 function ArchitecturalCube({ position, scale = 1, speed = 1 }: { position: [number, number, number], scale?: number, speed?: number }) {
     const meshRef = useRef<THREE.Mesh>(null);
 
@@ -22,12 +22,18 @@ function ArchitecturalCube({ position, scale = 1, speed = 1 }: { position: [numb
                 <boxGeometry args={[1, 1, 1]} />
                 <MeshTransmissionMaterial
                     backside
-                    samples={4}
-                    resolution={256}
-                    transmission={0.9}
-                    roughness={0.2}
-                    thickness={0.3}
-                    chromaticAberration={0.3}
+                    samples={16}
+                    resolution={512}
+                    transmission={0.95}
+                    roughness={0.1}
+                    clearcoat={1}
+                    clearcoatRoughness={0.1}
+                    thickness={0.5}
+                    chromaticAberration={0.5}
+                    anisotropy={0.3}
+                    distortion={0.2}
+                    distortionScale={0.2}
+                    temporalDistortion={0.1}
                     color="#ffffff"
                 />
             </mesh>
@@ -35,26 +41,39 @@ function ArchitecturalCube({ position, scale = 1, speed = 1 }: { position: [numb
     );
 }
 
-// Simplified Wireframe - single object instead of group
+// Wireframe Building
 function WireframeBuilding({ position, scale = 1 }: { position: [number, number, number], scale?: number }) {
-    const meshRef = useRef<THREE.Mesh>(null);
+    const groupRef = useRef<THREE.Group>(null);
 
     useFrame((state) => {
-        if (meshRef.current) {
-            meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
+        if (groupRef.current) {
+            groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
         }
     });
 
     return (
-        <mesh ref={meshRef} position={position} scale={scale}>
-            <boxGeometry args={[1.5, 4, 1.5]} />
-            <meshBasicMaterial color="#ffffff" wireframe opacity={0.5} transparent />
-        </mesh>
+        <group ref={groupRef} position={position} scale={scale}>
+            {/* Main tower */}
+            <mesh position={[0, 2, 0]}>
+                <boxGeometry args={[1.5, 4, 1.5]} />
+                <meshBasicMaterial color="#ffffff" wireframe opacity={0.6} transparent />
+            </mesh>
+            {/* Base */}
+            <mesh position={[0, -0.5, 0]}>
+                <boxGeometry args={[2.5, 1, 2.5]} />
+                <meshBasicMaterial color="#ffffff" wireframe opacity={0.3} transparent />
+            </mesh>
+            {/* Side wing
+            <mesh position={[1.5, 0.5, 0]}>
+                <boxGeometry args={[1, 2, 1.5]} />
+                <meshBasicMaterial color="#ffffff" wireframe opacity={0.4} transparent />
+            </mesh> */}
+        </group>
     );
 }
 
-// Simple metallic sphere instead of expensive glass
-function MetallicSphere({ position, scale = 1 }: { position: [number, number, number], scale?: number }) {
+// Floating Sphere with Glass Effect
+function GlassSphere({ position, scale = 1 }: { position: [number, number, number], scale?: number }) {
     const meshRef = useRef<THREE.Mesh>(null);
 
     useFrame((state) => {
@@ -65,21 +84,50 @@ function MetallicSphere({ position, scale = 1 }: { position: [number, number, nu
 
     return (
         <mesh ref={meshRef} position={position} scale={scale}>
-            <sphereGeometry args={[1, 32, 32]} />
-            <meshStandardMaterial
+            <sphereGeometry args={[1, 64, 64]} />
+            <MeshTransmissionMaterial
+                backside
+                samples={16}
+                resolution={256}
+                transmission={0.9}
+                roughness={0}
+                clearcoat={1}
+                thickness={0.3}
+                chromaticAberration={0.8}
                 color="#ffffff"
-                metalness={0.9}
-                roughness={0.1}
-                emissive="#ffffff"
-                emissiveIntensity={0.05}
             />
         </mesh>
     );
 }
 
-// Reduced particle count
+// Floating Ring
+function FloatingRing({ position, scale = 1 }: { position: [number, number, number], scale?: number }) {
+    const meshRef = useRef<THREE.Mesh>(null);
+
+    useFrame((state) => {
+        if (meshRef.current) {
+            meshRef.current.rotation.x = state.clock.elapsedTime * 0.5;
+            meshRef.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.3) * 0.3;
+        }
+    });
+
+    return (
+        <mesh ref={meshRef} position={position} scale={scale}>
+            <torusGeometry args={[1, 0.1, 16, 100]} />
+            <meshStandardMaterial
+                color="#ffffff"
+                metalness={0.9}
+                roughness={0.1}
+                emissive="#ffffff"
+                emissiveIntensity={0.1}
+            />
+        </mesh>
+    );
+}
+
+// Particle Field
 function ParticleField() {
-    const count = 80; // Reduced from 200
+    const count = 200;
     const mesh = useRef<THREE.Points>(null);
 
     const particles = useMemo(() => {
@@ -95,6 +143,7 @@ function ParticleField() {
     useFrame((state) => {
         if (mesh.current) {
             mesh.current.rotation.y = state.clock.elapsedTime * 0.02;
+            mesh.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.1;
         }
     });
 
@@ -110,53 +159,67 @@ function ParticleField() {
                 size={0.05}
                 color="#ffffff"
                 transparent
-                opacity={0.4}
+                opacity={0.6}
                 sizeAttenuation
             />
         </points>
     );
 }
 
-// Simplified grid
+// Grid Floor
 function GridFloor() {
     return (
         <group position={[0, -3, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-            <gridHelper args={[30, 20, '#ffffff', '#333333']} rotation={[Math.PI / 2, 0, 0]} />
+            <gridHelper args={[30, 30, '#ffffff', '#333333']} rotation={[Math.PI / 2, 0, 0]} />
         </group>
     );
 }
 
-// Subtle camera movement
+// Camera Animation
 function CameraRig() {
     const { camera } = useThree();
 
     useFrame((state) => {
-        camera.position.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.3;
-        camera.position.y = 0.5 + Math.sin(state.clock.elapsedTime * 0.15) * 0.2;
+        camera.position.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.5;
+        camera.position.y = 0.5 + Math.sin(state.clock.elapsedTime * 0.15) * 0.3;
         camera.lookAt(0, 0, 0);
     });
 
     return null;
 }
 
-// Main Scene - fewer objects, simpler lighting
+// Main 3D Scene
 function Scene() {
     return (
         <>
-            {/* Simplified lighting - removed environment and some lights */}
-            <ambientLight intensity={0.4} />
-            <pointLight position={[10, 10, 10]} intensity={0.8} color="#ffffff" />
-            <pointLight position={[-10, -10, -10]} intensity={0.3} color="#ffffff" />
+            {/* Lighting */}
+            <ambientLight intensity={0.3} />
+            <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
+            <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ffffff" />
+            <spotLight
+                position={[0, 10, 0]}
+                angle={0.3}
+                penumbra={1}
+                intensity={1}
+                color="#ffffff"
+            />
 
-            {/* Reduced number of objects */}
+            {/* Environment for reflections */}
+            <Environment preset="city" />
+
+            {/* 3D Objects */}
             <ArchitecturalCube position={[3, 1, -2]} scale={1.2} speed={0.8} />
-            <ArchitecturalCube position={[-3, -1, -3]} scale={0.8} speed={1.2} />
+            {/* <ArchitecturalCube position={[-3, -1, -3]} scale={0.8} speed={1.2} /> */}
+            <ArchitecturalCube position={[0, 2, -5]} scale={0.6} speed={1} />
 
             <WireframeBuilding position={[5, 0, -4]} scale={0.8} />
             <WireframeBuilding position={[-4, 0, -6]} scale={0.6} />
 
-            <MetallicSphere position={[-2, 2, -3]} scale={0.5} />
-            <MetallicSphere position={[4, -1, -2]} scale={0.3} />
+            {/* <GlassSphere position={[-2, 2, -3]} scale={0.5} /> */}
+            <GlassSphere position={[4, -1, -2]} scale={0.3} />
+
+            <FloatingRing position={[2, 3, -4]} scale={0.8} />
+            <FloatingRing position={[-3, 1, -5]} scale={0.5} />
 
             <ParticleField />
             <GridFloor />
@@ -166,24 +229,17 @@ function Scene() {
     );
 }
 
-// Main Component with performance settings
+// Main Component Export
 export function Hero3DScene() {
     return (
         <div className="absolute inset-0 z-0">
             <Canvas
                 camera={{ position: [0, 0, 8], fov: 45 }}
-                gl={{
-                    antialias: true,
-                    alpha: true,
-                    powerPreference: "high-performance"
-                }}
-                dpr={[1, 1.5]} // Reduced from [1, 2]
-                performance={{ min: 0.5 }} // Enable automatic performance scaling
+                gl={{ antialias: true, alpha: true }}
+                dpr={[1, 2]}
             >
                 <Scene />
             </Canvas>
         </div>
     );
 }
-
-export default Hero3DScene;

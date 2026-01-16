@@ -24,7 +24,7 @@ const itemVariants = {
 
 export default function ProjectsPage() {
     const [activeCategory, setActiveCategory] = useState("Tous");
-    const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+    const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
     const filteredProjects = activeCategory === "Tous"
         ? projects
@@ -107,10 +107,9 @@ export default function ProjectsPage() {
             <section className="py-24 relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 z-0 pointer-events-none opacity-5">
-                    <img src="/bg/bg.jpeg" alt="" className="w-full h-full object-cover" />
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-4  relative z-10">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeCategory}
@@ -129,14 +128,14 @@ export default function ProjectsPage() {
                                     className={`group cursor-pointer ${project.featured && index < 2 ? "md:col-span-2 lg:col-span-1" : ""
                                         }`}
                                 >
-                                    <Link href={`/projects/${project.id}`} className="block p-4 relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-neutral-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500">
+                                    <Link href={`/projects/${project.slug}`} className="block p-4 relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-neutral-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500">
                                         {/* Image */}
-                                        <div className="relative aspect-4/3 overflow-hidden">
+                                        <div className="relative aspect-4/3 rounded-3xl overflow-hidden">
                                             <Image
                                                 src={project.image}
                                                 alt={project.title}
                                                 fill
-                                                className="object-cover rounded-3xl  group-hover:scale-110 transition-transform duration-700"
+                                                className="object-cover   group-hover:scale-110 transition-transform duration-700"
                                             />
                                             <div className="absolute rounded-3xl inset-0 bg-linear-to-t from-secondary/90 via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -147,7 +146,7 @@ export default function ProjectsPage() {
                                                 </p>
                                                 <Button
                                                     variant="outline"
-                                                    className="w-fit rounded-full border-white/30 text-white hover:bg-white hover:text-secondary"
+                                                    className="w-fit rounded-full border-white/30 text-black hover:bg-white hover:text-secondary"
                                                 >
                                                     Voir les Détails <ArrowRight className="w-4 h-4 ml-2" />
                                                 </Button>
